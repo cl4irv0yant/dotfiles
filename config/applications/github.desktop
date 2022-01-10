@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=GitHub Pull Requests
+Exec=firefox https://github.com/pulls
+Type=Application
