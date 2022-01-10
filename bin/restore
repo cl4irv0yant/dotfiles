@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Define the backup directory to restore from
+BACKUP_DIR="$HOME/sync/backup"  # Replace with your actual backup directory
+
+restore_dir() {
+    local src="$1"
+    local dest="$2"
+    if [ -d "$src" ]; then
+        echo "Restoring $src to $dest"
+        cp -r "$src" "$dest"
+    else
+        echo "Directory $src not found in the backup"
+    fi
+}
+
+restore_file() {
+    local src="$1"
+    local dest="$2"
+    if [ -f "$src" ]; then
+        echo "Restoring $src to $dest"
+        cp "$src" "$dest"
+    else
+        echo "File $src not found in the backup"
+    fi
+}
+
+echo "Starting restoration process..."
+
+# Bluetooth Devices
+sudo restore_dir "$BACKUP_DIR/bluetooth" "/var/lib/bluetooth"
+
+# Network Connections
+sudo restore_dir "$BACKUP_DIR/network-connections" "/etc/NetworkManager/system-connections"
+
+# SSH Keys
+restore_dir "$BACKUP_DIR/ssh-keys" "$HOME/.ssh"
+
+# Firefox Data
+restore_dir "$BACKUP_DIR/firefox-data" "$HOME/.mozilla/firefox"
+
+# Thunderbird Data
+restore_dir "$BACKUP_DIR/thunderbird-data" "$HOME/.thunderbird"
+
+# fstab
+restore_file "$BACKUP_DIR/fstab" "/etc/fstab"
+
+# tmuxp sessions
+restore_dir "$BACKUP_DIR/tmuxp-sessions" "$XDG_CONFIG_HOME/tmuxp"
+
+# zsh history
+restore_file "$BACKUP_DIR/zhistory" "$ZDOTDIR/zhistory"
+
+# GnuPG
+restore_dir "$BACKUP_DIR/gnupg" "$HOME/.gnupg"
+
+## Cron jobs
+#if [ -f "$BACKUP_DIR/crontab" ]; then
+#    crontab "$BACKUP_DIR/crontab"
+#    echo "Crontab restored."
+#else
+#    echo "Crontab backup not found."
+#fi
+
+# Package list (for Arch Linux) - Uncomment if needed
+# pacman -S --needed $(<"$BACKUP_DIR/pkglist.txt")
+
+echo "Restoration completed."
+
+# Post-Restoration Instructions
+echo "Some changes may require a system restart or re-login to take effect."
