@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=GitHub Pull Requests
+Exec=firefox https://github.com/pulls?q=is%3Aopen+is%3Apr+review-requested%3A%40me+-reviewed-by%3A%40me+archived%3Afalse+draft%3Afalse+
+Type=Application

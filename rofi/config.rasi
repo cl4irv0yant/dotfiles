@@ -1,0 +1,33 @@
+configuration {
+    location: 0;
+    lines: 15;
+    columns: 1;
+    width: 50%;
+    font: "Hack Nerd Font Mono 20";
+    hide-scrollbar: true;
+    sidebar-mode: false;
+    color-enabled: true;
+    separator-style: none;
+    alternating-row-colors: false;
+    background-color: "#1a1b26"; // dark navy blue
+    foreground-color: "#c0caf5"; // light purplish blue
+    selected-normal-foreground: "#ffffff"; // white
+    selected-normal-background: "#7aa2f7"; // soft blue
+    selected-urgent-foreground: "#ffffff"; // white
+    selected-urgent-background: "#ff9e64"; // bright orange
+    selected-active-foreground: "#ffffff"; // white
+    selected-active-background: "#bb9af7"; // soft purple
+    normal-foreground: "#c0caf5"; // light purplish blue
+    normal-background: "#1a1b26"; // dark navy blue
+    active-foreground: "#c0caf5"; // light purplish blue
+    active-background: "#32344a"; // darker navy blue
+    urgent-foreground: "#c0caf5"; // light purplish blue
+    urgent-background: "#db4b4b"; // neon red/pink
+    header {
+        name: "Applications";
+        font: "Hack Nerd Font 20";
+        background-color: "@background-color"; // using the main background color
+        foreground-color: "@foreground-color"; // using the main foreground color
+    }
+}
+

@@ -1,0 +1,33 @@
+map h updir
+map j down
+map k up
+map l open
+map gg top
+map G bottom
+
+map dd delete
+map yy copy
+map pp paste
+map v select
+map V toggle
+
+map : cmd
+map / search
+map n next
+map N prev
+map . toggle-hidden
+map R redraw
+map q quit
+map z resize
+
+map gt next-tab
+map gT prev-tab
+map t new-tab
+map T new-tab-here
+map <tab> next-tab
+map <s-tab> prev-tab
+map <c-w>q quit-tab
+map <c-w>t new-tab
+map <c-w>T new-tab-here
+
+map e $nvim $fx

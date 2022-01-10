@@ -1,0 +1,65 @@
+appearance,ttf-hack-nerd,hack nerd font
+bluetooth,bluez,bluetooth protocol stack
+bluetooth,bluez-utils,bluetoothctl utility
+development-tools,docker,run containers
+development-tools,git,version control system
+development-tools,github-cli,the github cli
+development-tools,kubectl,k8s cli
+development-tools,mycli,mysql cli
+development-tools,neovim,editor... and much more
+development-tools,pgcli,postgres cli
+docs,man-db,manual
+docs,man-pages,manual pages
+docs,texinfo,gnu documentation system
+docs,tldr,examples for clis
+gui,brightnessctl,control backlight
+gui,dunst,notification system
+gui,firefox,firefox
+gui,libnotify,notifier
+gui,nvidia,nvidia drivers
+gui,wayland,display server
+gui,mako,notification daemon
+gui,hyprland,hyprland compositor
+gui,xdg-desktop-portal-hyprland,xdg-desktop-portal backend for hyprland 
+gui,hyprpaper,hyprland wallpaper manager
+gui,waybar,waybar status bar
+gui,wofi,run menu
+gui,swaylock,lock screen
+gui,swayidle,idle manager
+gui,unclutter,hide the mouse after short amount of time
+multimedia,nsxiv,image viewer
+multimedia,playerctl,control media
+networking,curl,data transfer lib and cli
+networking,openssh,remote login tool for ssh protocol
+networking,tailscale,a mesh vpn that makes it easy to connect your devices wherever they are.
+pacman,informant,an arch linux news reader and pacman hook
+pacman,pacman-contrib,contributed scripts and tools for pacman systems
+second-brain,calcurse,tui calendar
+second-brain,neomutt,cli mail client
+second-brain,newsboat,rss feed reader
+second-brain,obsidian,knowledge base
+second-brain,zathura-pdf-mupdf,pdf reader
+security,bitwarden-cli,bitwarden cli
+shell,alacritty,a cross-platform gpu-accelerated terminal emulator
+shell,bat,cat improvement
+shell,bc,arbitrary precision calculator
+shell,exa,ls improvemenet
+shell,fd,faster alternative to find
+shell,fzf,command line fuzzy finder
+shell,jq,json parser
+shell,lf,file browser
+shell,ripgrep-all,faster alternative to grep
+shell,tmux,terminal multiplexer
+shell,tmuxp,configure tmux session + windows + panes via config files
+shell,zsh,unix shell (z-shell)
+shell,zsh-autosuggestions,fish-like autosuggestions for zsh
+shell,zsh-syntax-highlighting,fish shell like syntax highlighting for zsh
+sound-system,alsa-utils,advanced linux sound architecture - utilities
+sound-system,pipewire,low level multimedia framework
+sound-system,pipewire-alsa,low-latency audio/video router and processor - alsa configuration
+sound-system,pipewire-audio,audio processor and router
+system-services,syncthing,open source continuous replication / cluster synchronization thing
+system-services,udiskie,automount devices
+system-services,xf86-input-synaptics,synaptics driver for notebook touchpads
+tools,bleachbit,Deletes unneeded files to free disk space and maintain privacy
+tools,hurl,API client

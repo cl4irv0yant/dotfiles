@@ -1,0 +1,21 @@
+# GTK Theme Settings
+gtk-theme-name="Arc-Dark"                      # The name of the theme that styles the UI components
+gtk-icon-theme-name="Flatery-Dark"             # The name of the theme used for icons
+gtk-font-name="Hack Nerd Font Mono 11"         # The font specification for user interface fonts
+gtk-cursor-theme-name="Adwaita"                # The name of the cursor theme
+gtk-cursor-theme-size=0                        # Cursor size (0 for default size)
+
+# Toolbar Settings
+gtk-toolbar-style=GTK_TOOLBAR_BOTH             # Whether the toolbar should display text, icons, or both
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR # The size of icons in the toolbar
+gtk-button-images=1                            # Whether images will appear on buttons
+gtk-menu-images=1                              # Whether images will appear in menus
+
+# Sound Settings
+gtk-enable-event-sounds=1                      # Whether event sounds are played
+gtk-enable-input-feedback-sounds=1             # Whether to play sounds as feedback for input
+
+# Font Rendering Settings
+gtk-xft-antialias=1                            # Whether to smooth edges of screen fonts (1 enables antialiasing)
+gtk-xft-hinting=1                              # Whether to improve character alignment (1 enables hinting)
+gtk-xft-hintstyle="hintfull"                   # The style of hinting to use ("hintfull" for maximum clarity)
