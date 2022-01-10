@@ -1,0 +1,4 @@
+player "mpv"
+
+macro m set browser "mpv %u"; open-in-browser ; set browser "firefox %u"
+

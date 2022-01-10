@@ -1,0 +1,41 @@
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+  INSTALLER_PATH: /path/to/your/installer.sh
+  VM_DISK_PATH: /path/to/your/disk.img
+  ISO_PATH: /path/to/archlinux.iso
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  setup-vm:
+    cmds:
+      # Create a disk image for the VM
+      - qemu-img create -f qcow2 {{.VM_DISK_PATH}} 20G
+    silent: true
+
+  test:
+    deps: [setup-vm]
+    cmds:
+      - qemu-system-x86_64 -cdrom {{.ISO_PATH}} -hda {{.VM_DISK_PATH}} -m 2G -smp 2 -boot once=d -net user,hostfwd=tcp::2222-:22 -enable-kvm -no-reboot
+      # Note: The above command assumes you have SSH access from the ISO to the installer.
+      # And that your installer will be triggered via SSH. The -net flag sets up port forwarding.
+    silent: true
+
+  run-installer:
+    cmds:
+      # Here, we assume that your installer can be executed over SSH.
+      # Adjust accordingly to how you've set up your installer.
+      - ssh -p 2222 root@localhost "{{.INSTALLER_PATH}}"
+    silent: true
+
+  cleanup:
+    cmds:
+      # Remove the VM disk image after testing
+      - rm {{.VM_DISK_PATH}}
+    silent: true
+

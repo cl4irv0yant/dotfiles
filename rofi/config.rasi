@@ -1,0 +1,34 @@
+
+configuration {
+    location: 0;
+    lines: 15;
+    columns: 1;
+    width: 50%;
+    font: "AnonymicePro Nerd Font Mono 20";
+    hide-scrollbar: true;
+    sidebar-mode: false;
+    color-enabled: true;
+    separator-style: none;
+    alternating-row-colors: false;
+    background-color: "#2a2a2a";
+    foreground-color: "#f8f8f2";
+    selected-normal-foreground: "#f8f8f2";
+    selected-normal-background: "#3f3f3f";
+    selected-urgent-foreground: "#f8f8f2";
+    selected-urgent-background: "#cc6666";
+    selected-active-foreground: "#f8f8f2";
+    selected-active-background: "#81a2be";
+    normal-foreground: "#f8f8f2";
+    normal-background: "#2a2a2a";
+    active-foreground: "#f8f8f2";
+    active-background: "#3f3f3f";
+    urgent-foreground: "#f8f8f2";
+    urgent-background: "#cc6666";
+    header {
+        name: "Applications";
+        font: "Hack Nerd Font 20";
+        background-color: "@background-color";
+        foreground-color: "@foreground-color";
+    }
+}
+

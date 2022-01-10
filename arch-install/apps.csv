@@ -1,0 +1,156 @@
+audio,pipewire,Low level multimedia framework
+audio,pipewire-alsa,Sound architecture
+audio,pipewire-audio,Audio processor and router
+audio,pipewire-jack,JACK support
+audio,pipewire-pulse,Sound middleware
+audio,pulsemixer,Alternative to pavucontrol in terminal
+audio,wireplumber,Session manager for pipewire
+backup,borgbackup,Deduplicating backup program
+backup,nfs-utils,Support programs for Network File Systems
+backup,rclone,Sync files to Cloud
+backup,rsync,A fast and versatile file copying tool for remote and local files
+backup,syncthing,Open Source Continuous Replication / Cluster Synchronization Thing
+bluetooth,blueberry,Bluetooth configuration
+bluetooth,bluetuith,Bluetooth TUI
+bluetooth,bluez,Bluetooth protocol stack
+bluetooth,bluez-utils,bluetoothctl utility
+browser,firefox,Firefox
+cloud,aws-cli,AWS cli
+cloud,azure,Azure cli
+cloud,gcloud,GCP cli
+database,mysql,Mysql
+database,postgresql,Postgresql
+database-management,mycli,MySQL cli
+database-management,pgcli,Postgres cli
+datascience,julia,High-level high-performance dynamic programming language
+datascience,r,Language and environment for statistical computing and graphics
+devops,act,Run your GitHub Actions locally
+devops,ansible,IaC tool
+devops,cronie,Daemon that runs specified programs at scheduled times and related tools
+devops,drone,Continuous delivery system
+devops,go-task-bin,Task runner and Make alternative
+devops,terraform,IaC tool
+disk-management,ncdu,Disk usage analyzer
+docker,dive,Docker tool
+docker,docker,Run containers
+docker,docker-compose,Orchestrate containers
+docker,lazydocker,TUI for docker and docker compose
+docs,man-db,Manual
+docs,man-pages,Manual pages
+docs,texinfo,GNU documentation system
+docs,tldr,Examples for CLIs
+ereader,calibre,Ebook management
+ereader,epr,EPUB Reader
+ereader,zathura-pdf-mupdf,PDF reader
+essential,networkmanager,Network manager
+essential,nvidia,Nvidia drivers
+essential,xorg,X server
+essential,xorg-xinit,Display server boot
+file-management,lf,file-browser
+fonts,noto-fonts-emoji,Fonts for emojis
+fonts,ttf-hack-nerd,Hack nerd font
+git,diff-so-fancy,Human readable git diff
+git,git,Version control system
+git,gitflow-avh,Gitflow workflow
+git,github-cli,The GitHub CLI
+git,lazygit,Git UI
+git,tig,Text-mode interface for git
+gui,arc-gtk-theme,Desktop themes
+gui,capitaine-cursors,Cursor theme
+gui,flatery-icon-theme-git,GTK icons
+gui,lxappearance,Theme switcher for GTK+
+gui,papirus-icon-theme,Icon theme
+gui,qt5ct,Configure QT5 settings
+gui,wireshark-qt,Network traffic and protocol analyzer/sniffer - Qt GUI
+hw-macbookair,broadcom-wl,Macbook Air 7.2 network driver
+hw-mousepad,xf86-input-synaptics,Synaptics driver for notebook touchpads
+i3,betterlockscreen,Lock screen
+i3,i3-wm,i3 tiled window manager
+i3,polybar,polybar status bar
+i3,rofi,Run menu
+k8s,fluxctl,GitOps kubernetes operator
+k8s,helm,k8s package manager
+k8s,k3s,Lightweight Kubernetes
+k8s,k9s,TUI for managing Kubernetes clusters and pods
+k8s,kompose,Docker compose to Kubernetes transformation tool
+k8s,kubectl,k8s cli
+k8s,kubectx,Switch kubectl context and namespace
+k8s,kustomize,Customize k8s yaml
+k8s,stern,Tail multiple k8s pods
+monitor,arandr,xrandr GUI
+monitor,autorandr,Auto-detect connected display hardware and load appropiate X11 setup using xrandr
+multimedia,ffmpeg,Record/stream audio/video
+multimedia,lltag,Automatic mp3 tagger and renamer
+multimedia,mpv,Free video player
+neovim,neovim,Editor... and much more
+neovim,phpactor,PHP completion refactoring introspection
+network-tool,curl,Data transfer lib and cli
+network-tool,httpie,Cli http client
+network-tool,iptables,Packet filtering and nat
+network-tool,mitmproxy,MITM proxy
+network-tool,nmap,Port scanner
+network-tool,nodejs-localtunnel,Expose localhost
+network-tool,openssh,Remote login tool for SSH protocol
+network-tool,speedtest-cli,Speedtest
+network-tool,sshfs,Mount SSH Filesystem
+network-tool,tailscale,A mesh VPN that makes it easy to connect your devices wherever they are.
+network-tool,wget,Network utility to retrieve files from the Web
+notifier,dunst,Notification system
+notifier,libnotify,Notifier
+password-manager,bitwarden-cli,Bitwarden CLI
+password-manager,gnome-keyring,Keyring
+password-manager,libsecret,For keyring
+password-manager,ykman,Yubikey manager
+programming-java,sdkman,sdkman
+programming-lisp,clisp,ANSI Common Lisp interpreter compiler and debugger
+programming-php,phpstorm,PHP IDE
+programming-tex,texlive-most,LaTeX
+rice,feh,X11 image viewer
+rice,picom,X compositor
+rice,unclutter,Hide the mouse after short amount of time
+second-brain,anki,Spaced repetition
+second-brain,calcurse,TUI Calendar
+second-brain,obsidian,Knowledge base
+second-brain,task,TaskWarrior
+second-brain,timew,TimeWarrior
+second-brain,vit,Terminal interface for Taskwarrior with Vim key bindings and colorization
+security,fail2ban,Intrusion prevention
+security,gnupg,Gnu Privacy Guard
+security,openssl,Toolkit for SSL/TLS
+security,ufw,Firewall management
+system-control,brightnessctl,Control backlight
+system-control,downgrade,Downgrade Arch packages
+system-control,playerctl,Control media
+system-control,redshift,Adjust color of screen
+system-control,udiskie,Automount devices
+system-control,xcape,Configure modifier key
+system-control,xdg-utils,XDG settings
+system-observability,acpi,Client for battery power and thermal readings
+system-observability,conky,Lightweight system monitor
+system-observability,glances,Monitoring tool
+system-observability,htop,Interactive process viewer
+system-observability,iotop,IO viewer
+system-observability,neofetch,System specs
+terminal,alacritty,A cross-platform GPU-accelerated terminal emulator
+terminal,pv,Display progress bar through pipewire
+terminal,tree,List files in a tree
+time-wasters,neomutt,CLI mail client
+time-wasters,newsboat,RSS feed reader
+tmux,tmux,Terminal multiplexer
+tmux,tmuxp,Configure tmux session + windows + panes via config files
+utilities,bat,cat clone
+utilities,exa,Modern ls
+utilities,fd,Simple fast and user-friendly alternative to find
+utilities,fzf,Command line fuzzy finder
+utilities,jq,"Json parser"
+utilities,ripgrep-all,Faster alternative to grep
+utilities,the_silver_searcher,Fast code searching
+utilities,unzip,Unzip
+utilities,xsel,Manipulate the X selection
+utilities,yq,"Yaml parser"
+virtualization,qemu,Machine emulator
+virtualization,virtualbox,Virtualization software
+zsh,zsh,Unix shell (Z-Shell)
+zsh,zsh-autosuggestions,Suggest completions
+zsh,zsh-completions,Additional completions for Zsh
+zsh,zsh-syntax-highlighting,Syntax highlighting for ZSH
