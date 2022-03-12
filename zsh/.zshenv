@@ -1,3 +1,6 @@
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv virtualenv-init -)"
+
 # For dotfiles
 export XDG_CONFIG_HOME="$HOME/.config"
 # For user specific data
@@ -22,3 +25,4 @@ export DOTFILES="$HOME/dotfiles"
 # fzf and ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+

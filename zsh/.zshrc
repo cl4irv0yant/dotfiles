@@ -1,5 +1,7 @@
 fpath=($ZDOTDIR/external $fpath)
 
+eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
 zmodload zsh/complist
@@ -52,3 +54,6 @@ bindkey -r '^g'
 bindkey -s '^g' 'clear\n'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+export PATH="$HOME/.poetry/bin:$PATH"
