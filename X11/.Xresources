@@ -1,51 +1,56 @@
-*.foreground: #C6C6C6
-*.background: #1C1C1C
-*.cursorColor: #444444
+#define base00 #272822
+#define base01 #383830
+#define base02 #49483e
+#define base03 #75715e
+#define base04 #a59f85
+#define base05 #f8f8f2
+#define base06 #f5f4f1
+#define base07 #f9f8f5
+#define base08 #f92672
+#define base09 #fd971f
+#define base0A #f4bf75
+#define base0B #a6e22e
+#define base0C #a1efe4
+#define base0D #66d9ef
+#define base0E #ae81ff
+#define base0F #cc6633
 
-! black 236 238
-*.color0: #303030
-*.color8: #444444
-! red 167
-*.color1: #d75f5f
-*.color9: #d75f5f
-! green 108
-*.color2: #87AF87
-*.color10: #87AF87
-! yellow 221
-*.color3: #ffd75f
-*.color11: #ffd75f
-! blue 110
-*.color4: #87afd7
-*.color12: #87afd7
-! magenta 146
-*.color5: #afafd7
-*.color13: #afafd7
-! cyan 75
-*.color6: #afd7ff
-*.color14: #afd7ff
-! white 239 15
-*.color7: #e4e4e4
-*.color15: #ffffff
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
 
-URxvt*font: xft:Inconsolata Nerd Font Mono:size=18
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07
+
+
+URxvt*font: xft:Inconsolata Nerd Font Mono:size=12
 URxvt*borderLess: false
 URxvt*externalBorder: 0
 URxvt*internalBorder: 4
 URxvt*scrollBar: false
 URxvt*saveLines: 5000
-  
-URxvt*perl-ext-common: default,tabbedex
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*shading: 70
+*perl-ext-common: default
 
-URxvt.keysym.Control-Shift-N: perl:tabbedex:new_tab
-URxvt.keysym.Control-Shift-K: perl:tabbedex:next_tab
-URxvt.keysym.Control-Shift-J: perl:tabbedex:prev_tab
-URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
-URxvt.keysym.Control-Shift-H: perl:tabbedex:move_tab_left
-URxvt.keysym.Control-Shift-L: perl:tabbedex:move_tab_right
-
-URxvt*tabbedex.tabbar-fg: 15
-URxvt*tabbedex.tabbar-bg: 236
-URxvt*tabbedex.tab-fg: 110
-URxvt*tabbedex.tab-bg: 236
-URxvt*tabbedex.transparent: true
-URxvt*tabbedex.new-button: false

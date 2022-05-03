@@ -1,6 +1,6 @@
 #!/bin/sh
 
-img=/tmp/i3lock.png
+img=~/dotfiles/i3/feh/wallpaper.jpg
 
 scrot -o $img
 convert $img -scale 10% -scale 1000% $img

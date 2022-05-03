@@ -30,6 +30,13 @@ nvim --noplugin +PlugUpdate +qa
 rm -rf "$XDG_CONFIG_HOME/i3"
 ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 
+###########
+# Polybar #
+###########
+
+rm -rf "$XDG_CONFIG_HOME/polybar"
+ln -sf "$DOTFILES/polybar" "$XDG_CONFIG_HOME"
+
 #######
 # Zsh #
 #######
