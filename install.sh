@@ -37,6 +37,13 @@ ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 rm -rf "$XDG_CONFIG_HOME/polybar"
 ln -sf "$DOTFILES/polybar" "$XDG_CONFIG_HOME"
 
+########
+# ROFI #
+########
+
+rm -rf "$XDG_CONFIG_HOME/rofi"
+ln -sf "$DOTFILES/rofi" "$XDG_CONFIG_HOME"
+
 #######
 # Zsh #
 #######
