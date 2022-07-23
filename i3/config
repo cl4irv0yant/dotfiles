@@ -32,6 +32,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvtc
+bindsym $mod+i exec urxvtc -e 'ranger'
+bindsym $mod+p exec anki "" --no-sandbox
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -50,12 +52,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -94,7 +90,7 @@ bindsym $mod+a focus parent
 set $terms "1: terms"
 set $web "2: web"
 set $ws3 "3"
-set $ws4 "4: slack"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -129,9 +125,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 workspace_auto_back_and_forth yes
 
 assign [class="firefox" instance="Navigator"] $web
-assign [class="slack"] $ws4
+assign [class="Postman"] $ws4
+for_window [class="Slack"] move to workspace $ws5
 assign [class="jetbrains-idea" instance="jetbrains-idea"] $ws3
-
+assign [class="Anki"] $ws6
 focus_follows_mouse no
 
 # set $i3lockwall i3lock -i ~/Downloads/wallpaper.png
@@ -160,7 +157,7 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
-exec --no-startup-id feh --no-fehbg --bg-fill ~/dotfiles/i3/feh/wallpaper.png
+exec --no-startup-id feh --no-fehbg --bg-fill ~/dotfiles/i3/feh/huskvarna-sweden.jpg
 
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
@@ -262,8 +259,6 @@ set $mode_display Config monitor resolution - Default config (d)
 
 mode "$mode_display" {
     bindsym d exec --no-startup-id sh "$HOME/.config/X11/monitor.sh", mode "default"
-
-    # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -274,7 +269,7 @@ exec --no-startup-id dunst
 # Remap Caps Lock key when external keyboard is plugged
 bindsym $mod+z exec "setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape' &"
 
-gaps inner 5
+gaps inner 2
 gaps outer 2
 for_window [class=".*"] border pixel 0
 

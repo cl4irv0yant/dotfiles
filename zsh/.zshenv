@@ -1,5 +1,7 @@
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # For dotfiles
 export XDG_CONFIG_HOME="$HOME/.config"

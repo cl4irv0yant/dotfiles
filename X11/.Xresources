@@ -47,6 +47,6 @@ URxvt*scrollBar: false
 URxvt*saveLines: 5000
 URxvt*inheritPixmap: true
 URxvt*transparent: True
-URxvt*shading: 30
+URxvt*shading: 50
 *perl-ext-common: default
 
