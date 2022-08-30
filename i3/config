@@ -157,7 +157,7 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
-exec --no-startup-id feh --no-fehbg --bg-fill ~/dotfiles/i3/feh/huskvarna-sweden.jpg
+exec --no-startup-id feh --no-fehbg --bg-fill --randomize ~/dotfiles/i3/feh/*
 
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
@@ -264,13 +264,13 @@ mode "$mode_display" {
 }
 bindsym $mod+x mode "$mode_display"
 
-exec --no-startup-id dunst
+exec --no-startup-id dunst -lb "$background" -nb "$background" -cb "$background" -lf "$foreground" -bf "$foreground" -cf "$foreground" -nf "$foreground"
 
 # Remap Caps Lock key when external keyboard is plugged
 bindsym $mod+z exec "setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape' &"
 
-gaps inner 2
-gaps outer 2
+gaps inner 0
+gaps outer 0
 for_window [class=".*"] border pixel 0
 
 bar {

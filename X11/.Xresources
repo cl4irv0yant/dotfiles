@@ -18,7 +18,7 @@
 *.foreground:   nord4
 *.background:   nord0
 *.cursorColor:  nord4
-*fading: 35
+*fading: 20
 *fadeColor: nord3
 
 *.color0: nord1
@@ -47,6 +47,6 @@ URxvt*scrollBar: false
 URxvt*saveLines: 5000
 URxvt*inheritPixmap: true
 URxvt*transparent: True
-URxvt*shading: 50
+URxvt*shading: 10
 *perl-ext-common: default
 
