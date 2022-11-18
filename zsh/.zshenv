@@ -1,6 +1,8 @@
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv virtualenv-init -)"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # For dotfiles
 export XDG_CONFIG_HOME="$HOME/.config"
 # For user specific data
