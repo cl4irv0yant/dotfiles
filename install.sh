@@ -79,3 +79,9 @@ ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
 [ ! -d "$XDG_CONFIG_HOME/tmux/plugins" ] \
 && git clone https://github.com/tmux-plugins/tpm \
 "$XDG_CONFIG_HOME/tmux/plugins/tpm"
+
+########
+# misc #
+#######
+
+localectl set-x11-keymap se
