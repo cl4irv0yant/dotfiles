@@ -12,7 +12,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 autoload -Uz compinit; compinit
 _comp_options+=(globdots) # With hidden files
-source $DOTFILES/zsh/external/completion.zsh
+source ~/dotfiles/zsh/external/completion.zsh
 
 autoload -Uz prompt_purification_setup; prompt_purification_setup
 
@@ -56,4 +56,3 @@ bindkey -s '^g' 'clear\n'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-export PATH="$HOME/.poetry/bin:$PATH"

@@ -15,7 +15,7 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     " Compiler and linter
     Plug 'neomake/neomake'
     " Theme 
-    Plug 'arcticicestudio/nord-vim'
+    Plug 'overcache/NeoSolarized'
     " Status bar
     Plug 'itchyny/lightline.vim'
     "tmux
@@ -25,6 +25,7 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'christoomey/vim-tmux-navigator'
     " Man pages in Neovim
     Plug 'jez/vim-superman'
+    Plug 'lilydjwg/colorizer'
 call plug#end()
 
 set clipboard+=unnamedplus
@@ -170,11 +171,13 @@ command! -bang -nargs=* -complete=file Make NeomakeProject <args>
 let g:neomake_sh_enabled_makers = ['shellcheck']
 let g:neomake_vim_enabled_makers = ['vint']
 
-"########
-"# Nord #
-"########
+"#############
+"# Solarized #
+"#############
 
-colorscheme nord 
+set background=dark
+colorscheme NeoSolarized
+
 
 "#############
 "# lightline #
