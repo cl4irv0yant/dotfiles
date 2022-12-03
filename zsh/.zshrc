@@ -1,6 +1,7 @@
 fpath=($ZDOTDIR/external $fpath)
 
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
 zmodload zsh/complist
