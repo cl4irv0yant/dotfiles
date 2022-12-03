@@ -3,8 +3,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-export PATH="$HOME/.local/bin:$PATH"
-
 # For dotfiles
 export XDG_CONFIG_HOME="$HOME/.config"
 # For user specific data
