@@ -85,3 +85,13 @@ ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
 #######
 
 localectl set-x11-keymap se
+
+##########
+# Python #
+#########
+
+curl https://pyenv.run | bash
+pyenv install 3.10.0
+pyenv global 3.10.0
+pyenv shell 3.10.0
+curl -sSL https://install.python-poetry.org | python3 -
