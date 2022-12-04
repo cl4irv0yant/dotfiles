@@ -232,14 +232,6 @@ set_from_resource $white2 color15
 
 # hide borders
 hide_edge_borders both
-
-# class border backgr. text indicator child_border 
-client.focused 		$background $background $white2 #285577
-client.focused_inactive $background $background $foreground #484e50
-client.unfocused 	$background #222222 #888888 #292d2e #222222
-client.urgent 		$red1 $red1 $white2 $red1 $red1
-client.placeholder 	#000000 #0c0c0c $white2 #000000 0c0c0c
-
 for_window [class="URxvt*"] border pixel 0
 
 # Terminal scratchpad with tmux and three windows: 1. Terminal | 2.Neovim temp file
