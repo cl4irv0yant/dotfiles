@@ -1,5 +1,13 @@
 " Plugins
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-repeat'
+    Plug 'AndrewRadev/splitjoin.vim'
+    Plug 'andymass/vim-matchup'
+    Plug 'editorconfig/editorconfig-vim'
+
     Plug 'chrisbra/csv.vim'
     Plug 'moll/vim-bbye'
     Plug 'simeji/winresizer'
@@ -26,6 +34,27 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     " Man pages in Neovim
     Plug 'jez/vim-superman'
     Plug 'lilydjwg/colorizer'
+    Plug 'tpope/vim-fugitive'
+    Plug 'scrooloose/nerdtree'
+    Plug 'bfredl/nvim-miniyank'
+    Plug 'moll/vim-bbye'
+    Plug 'amiroin/vim-project'
+    Plug 'mhinz/vim-startify'
+    Plug 'StanAngeloff/php.vim'
+    Plug 'ncm2/ncm2'
+    Plug 'phpactor/phpactor'
+    Plug 'phpactor/ncm2-phpactor'
+    Plug 'wincent/ferret'
+    Plug 'adoy/vim-php-refactoring-toolbox'
+    Plug 'mhinz/vim-signify'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'majautushi/tagbar'
+    Plug 'joonty/vdebug'
+    Plug 'tobyS/vmustache'
+    Plug 'tobyS/pdv'
+
+    Plug 'tpope/vim-scriptease'
 call plug#end()
 
 set clipboard+=unnamedplus
@@ -77,6 +106,18 @@ augroup END
 nnoremap <leader>f :Files<cr>
 
 nnoremap <c-w>h <c-w>s
+
+" Ripgrep
+
+nnoremap <leader>a :Rg<space>
+nnoremap <leader>A :exec "Rg ".expand("<cword>")<cr>
+
+autocmd VimEnter * command! -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
 "###########
 "# coc.vim #
