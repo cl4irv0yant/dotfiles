@@ -13,7 +13,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 autoload -Uz compinit; compinit
 _comp_options+=(globdots) # With hidden files
-source ~/dotfiles/zsh/external/completion.zsh
+source $DOTFILES/zsh/external/completion.zsh
 
 autoload -Uz prompt_purification_setup; prompt_purification_setup
 
