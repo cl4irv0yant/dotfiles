@@ -1,79 +1,123 @@
-
-configuration {
-  display-drun: "Applications:";
-  display-window: "Windows:";
-  drun-display-format: "{name}";
-  font: "JetBrainsMono Nerd Font Medium 10";
-  modi: "window,run,drun";
-}
-
-@theme "/dev/null"
-
 * {
-  bg: #11121D;
-  bg-alt: #444b6a;
+	text-color:        #ccd2be;
+	background-color:  rgba(60, 65, 64, 0.3);
+	
+	fc-color: #a8b298;
+	bg-color: #3c4140;
+	fc-color-trans: #69888564;
+	bg-color-trans: #3c4140F0;
 
-  fg: #FFFFFF;
-  fg-alt: #787c99;
-
-  background-color: @bg;
-  
-  border: 0;
-  margin: 0;
-  padding: 0;
-  spacing: 0;
+	font: "Roboto 11";
 }
 
-window {
-  width: 30%;
+/* ================================================= */
+/* Main container                                    */
+/* ================================================= */
+#window {
+	fullscreen:    true;
+	location:      center;
+	anchor:        center;
+	border:        0px 0px 0px 0px;
+	transparency:  "real";
+
+	orientation:  horizontal;
+	children:     [mainbox, dummy];
+    	spacing: 0;
 }
 
-element {
-  padding: 8 0;
-  text-color: @fg-alt;
+/* First container */
+#mainbox {
+	expand:            false;
+	background-color:  @bg-color;
+	spacing:           1em;
+  	padding:           0px;
+  	border: 0px 1px 0px 0px;
+	border-color: #666666;
 }
 
-element selected {
-  text-color: @fg;
+/* Dummy container */
+#dummy {
+	expand: true;
+  	background-color: rgba(0, 0, 0, 0.5);
+}
+/* ================================================= */
+
+/* ================================================= */
+/* Sidebar and its elements                          */
+/* ================================================= */
+#sidebar {
+	border:  0px 0px 0px 0px;
 }
 
-element-text {
-  background-color: inherit;
-  text-color: inherit;
-  vertical-align: 0.5;
+#button {
+	font:       "Roboto 11";
+	padding:    0.7em;
 }
 
-element-icon {
-  size: 30;
+#button selected {
+	font:              "Roboto 11";
+	background-color:  @fc-color-trans;
+}
+/* ================================================= */
+
+/* ================================================= */
+/*  Input bar                                        */
+/* ================================================= */
+#inputbar {
+	padding:       1.4em 2em 0 2em;
+	spacing:		   0.2em;
 }
 
-entry {
-  background-color: @bg-alt;
-  padding: 12;
-  text-color: @fg;
+#prompt {
+	font: "Roboto SemiBold 11";
 }
 
-inputbar {
-  children: [prompt, entry];
+#entry {
+	font: "Roboto 11";
+	width: 24em;
+}
+/* ================================================= */
+
+
+/* ================================================= */
+/* List view					     */
+/* ================================================= */
+#listview {
+	spacing: 0px;
 }
 
-listview {
-  padding: 8 12;
-  background-color: @bg;
-  columns: 1;
-  lines: 8;
+#element {
+	font:     "Roboto 11";
+	padding:  0.7em 2em 0.7em 2em;
 }
 
-mainbox {
-  background-color: @bg;
-  children: [inputbar, listview];
+#element selected normal {
+	background-color: @fc-color-trans;
 }
 
-prompt {
-  background-color: @bg-alt;
-  enabled: true;
-  padding: 12 0 0 12;
-  text-color: @fg;
+#element normal active {
+	background-color: @fc-color-trans;
 }
 
-/* vim: ft=sass
+#element normal urgent {
+	background-color: Orange;
+}
+
+#element alternate normal {
+}
+
+#element alternate active {
+	text-color: @focus-col;
+}
+
+#element alternate urgent {
+	background-color: OrangeRed;
+}
+
+#element selected active {
+	background-color:  @fc-color-trans;
+}
+
+#element selected urgent {
+	background-color:  DarkOrange;
+}

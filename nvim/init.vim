@@ -227,3 +227,10 @@ colorscheme NeoSolarized
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
+
+
+"############
+"# NerdTree #
+"############
+
+nnoremap <Leader>f :NERDTreeToggle<Enter>
