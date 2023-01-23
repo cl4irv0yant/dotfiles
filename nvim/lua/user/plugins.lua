@@ -65,6 +65,8 @@ return packer.startup(function(use)
   -- Snippets
   use { "honza/vim-snippets"}
   use { "SirVer/ultisnips"}
+  use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
+  use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
 
   -- Search and replace
   use { "stefandtw/quickfix-reflector.vim"}
@@ -108,10 +110,6 @@ return packer.startup(function(use)
   use { "hrsh7th/cmp-nvim-lsp", commit = "3cf38d9c957e95c397b66f91967758b31be4abe6" }
   use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
 
-  -- Snippets
-  use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
-  use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
-
   -- LSP
   use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
   use { "williamboman/nvim-lsp-installer"}
@@ -141,9 +139,19 @@ return packer.startup(function(use)
   use { "wgwoods/vim-systemd-syntax"}
   use { "whatyouhide/vim-tmux-syntax"}
 
-  -- Misc
-  use { "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" } -- Autopairs, integrates with both cmp and treesitter
+  -- Commenting
+  use { "tpope/vim-commentary"}
   use { "numToStr/Comment.nvim", commit = "97a188a98b5a3a6f9b1b850799ac078faa17ab67" }
+
+  -- Misc
+  use { "andymass/vim-matchup" }
+  use { "ap/vim-css-color" }
+  use { "lambdalisue/suda.vim"}
+  use { "machakann/vim-highlightedyank" }
+  use { "tpope/vim-abolish" }
+  use { "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" } -- Autopairs, integrates with both cmp and treesitter
+  use { "jiangmiao/auto-pairs" }
+  use { "tpope/vim-repeat"}
   use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
   use { "nvim-lua/plenary.nvim", commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" } -- Useful lua functions used by lots of plugins
   use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" }
