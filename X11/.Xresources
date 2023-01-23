@@ -76,8 +76,8 @@ URxvt*saveLines: 5000
 URxvt*letterSpace: -1
 
 URxvt*inheritPixmap: true
-URxvt*transparent: false
-URxvt*shading: 50
+URxvt*transparent: true
+URxvt*shading: 25
 URxvt*perl-ext-common: default, tabbedex,resize-font
 
 URxvt.keysym.C-minus: resize-font:smaller
