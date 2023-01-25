@@ -1,3 +1,3 @@
 #!/bin/sh
-xrandr --output DP-0 --primary --mode 3840x2160 --pos 0x0 --rotate normal --scale 0.70x0.70 --rate 144.00
+xrandr --output HDMI-1 --primary --mode 1920*1080 --pos 0x0 --rotate normal
 feh --no-fehbg --bg-fill --randomize ~/dotfiles/i3/feh/*
