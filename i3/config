@@ -2,7 +2,7 @@ set $mod Mod4
 
 font pango:Inconsolata NF 10
 
-exec --no-startup-id sh "$HOME/.config/X11/monitor.sh", mode "default"
+exec --no-startup-id sh $DOTFILES/X11/monitor.sh", mode "default"
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id dunst
 exec --no-startup-id feh --no-fehbg --bg-fill --randomize $DOTFILES/i3/feh/*
@@ -31,7 +31,12 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
-bindsym $mod+a focus parent
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 set $ws1 "1"
 set $ws2 "2"
@@ -119,7 +124,6 @@ set_from_resource $cyan2 color14
 set_from_resource $white1 color7 
 set_from_resource $white2 color15 
 
-
 hide_edge_borders both
 for_window [class="URxvt*"] border pixel 0
 
@@ -139,6 +143,33 @@ attach-session -d -t scratchpad
 for_window [instance="htop_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
 exec urxvtc -name htop_scratchpad -e htop
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown
+mode "$mode_system" {
+	bindsym l exec --no-startup-id $i3lockwall, mode "default"
+	bindsym e exec --no-startup-id i3-msg exit, mode "default"
+	bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
+	bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
+	bindsym r exec --no-startup-id systemctl reboot, mode "default"
+	bindsym CTRL+s exec --no-startup-id systemctl poweroff -i, mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+BackSpace mode "$mode_system"
+
+set $mode_display Config monitor resolution - Default config (d)
+mode "$mode_display" {
+    bindsym d exec --no-startup-id sh "$HOME/.config/X11/monitor.sh", mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+a mode "$mode_display"
+
+# dunst keyboard shortcuts
+bindsym $mod+x exec dunstctl close-all
+bindsym Ctrl+BackSpace exec dunstctl history-pop
 
 bindsym $mod+z exec "setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape' &"
 
