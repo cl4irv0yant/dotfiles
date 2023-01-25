@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#######
+# X11 #
+#######
+
+rm -rf "$XDG_CONFIG_HOME/X11"
+ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
+
 ########
 # nvim #
 ########
@@ -8,9 +15,6 @@ mkdir -p "$XDG_CONFIG_HOME/nvim"
 mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 
 ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim"
-
-rm -rf "$XDG_CONFIG_HOME/X11"
-ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
 # install neovim plugin manager
 [ ! -f "$DOTFILES/nvim/autoload/plug.vim" ] \
