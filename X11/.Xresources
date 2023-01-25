@@ -55,8 +55,8 @@
 *color7:                S_base2
 *color15:               S_base3
 
-URxvt*font: xft:Inconsolata Nerd Font Mono:size=10:antialias=true
-URxvt*boldFont: xft:Inconsolata Nerd Font Mono:style=Bold:size=10:antialias=true
+URxvt*font: xft:Hack Nerd Font Mono:style=Regular:size=10:pixelsize=16:antialias=true
+URxvt*boldFont: xft:Hack Nerd Font:style=Bold:size=10:antialias=true
 
 URxvt*borderLess: false
 URxvt*externalBorder: 0
@@ -78,7 +78,7 @@ URxvt*letterSpace: -1
 URxvt*inheritPixmap: true
 URxvt*transparent: true
 URxvt*shading: 25
-URxvt*perl-ext-common: default, tabbedex,resize-font
+URxvt*perl-ext-common: tabbedex,resize-font
 
 URxvt.keysym.C-minus: resize-font:smaller
 URxvt.keysym.C-plus: resize-font:bigger
