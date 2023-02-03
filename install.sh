@@ -14,7 +14,7 @@ ln -sf "$DOTFILES/X11" "$XDG_CONFIG_HOME/X11"
 mkdir -p "$XDG_CONFIG_HOME/nvim"
 mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 
-ln -sf "$DOTFILES/nvim" "$XDG_CONFIG_HOME/nvim"
+ln -sf "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
 
 ######
 # i3 #
