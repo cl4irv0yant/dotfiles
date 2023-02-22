@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:Inconsolata NF 10
+font pango:Inconsolata NF 14
 
 exec --no-startup-id sh $DOTFILES/X11/monitor.sh", mode "default"
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
