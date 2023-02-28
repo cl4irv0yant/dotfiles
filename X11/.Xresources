@@ -55,8 +55,8 @@
 *color7:                S_base2
 *color15:               S_base3
 
-URxvt*font: xft:Hack Nerd Font Mono:style=Regular:size=10:pixelsize=16:antialias=true
-URxvt*boldFont: xft:Hack Nerd Font:style=Bold:size=10:antialias=true
+URxvt*font: xft:Hack Nerd Font Mono:style=Regular:size=12:pixelsize=12:antialias=true
+URxvt*boldFont: xft:Hack Nerd Font:style=Bold:size=12:antialias=true
 
 URxvt*borderLess: false
 URxvt*externalBorder: 0
@@ -64,15 +64,10 @@ URxvt*internalBorder: 0
 
 URxvt*depth: 32
 URxvt.background: [85]#181815
-
 URxvt*scrollBar: false
-
 URxvt*cursorColor: #ffffff
-
 URxvt*termName: rxvt-unicode
-
 URxvt*saveLines: 5000
-
 URxvt*letterSpace: -1
 
 URxvt*inheritPixmap: true
@@ -84,22 +79,3 @@ URxvt.keysym.C-minus: resize-font:smaller
 URxvt.keysym.C-plus: resize-font:bigger
 URxvt.keysym.C-equal: resize-font:reset
 URxvt.keysym.C-question: resize-font:show
-
-URxvt.keysym.Control-Shift-N: perl:tabbedex:new_tab
-URxvt.keysym.Control-Shift-K: perl:tabbedex:next_tab
-URxvt.keysym.Control-Shift-J: perl:tabbedex:prev_tab
-URxvt.keysym.Control-Shift-X: perl:tabbedex:kill_tab
-
-URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
-URxvt.keysym.Control-Shift-H: perl:tabbedex:move_tab_left
-URxvt.keysym.Control-Shift-L: perl:tabbedex:move_tab_right
-
-URxvt.tabbedex.bell-timeout: 0
-URxvt.tabbedex.tabbar-timeouts: 0:  :10:
-URxvt*tabbedex.title: false
-URxvt*tabbedex.tabbar-fg: 15
-URxvt*tabbedex.tabbar-bg: 236
-URxvt*tabbedex.tab-fg: bold 167
-URxvt*tabbedex.tab-bg: 236
-URxvt*tabbedex.transparent:true
-URxvt*tabbedex.new-button: false

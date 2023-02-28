@@ -7,14 +7,25 @@
 rm -rf "$XDG_CONFIG_HOME/X11"
 ln -sf "$DOTFILES/X11" "$XDG_CONFIG_HOME/X11"
 
+#######
+# GTK #
+#######
+
+ln -s "$DOTFILES/gtk-3.0/settings.ini" "$XDG_CONFIG_HOME/gtk-3.0/"
+
+#######
+# Git #
+#######
+
+ln -s "$DOTFILES/.gitconfig" "$HOME"
+
 ########
 # nvim #
 ########
 
-mkdir -p "$XDG_CONFIG_HOME/nvim"
-mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
-
+rm -rf $XDG_CONFIG_HOME/nvim
 ln -sf "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
+mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 
 ######
 # i3 #

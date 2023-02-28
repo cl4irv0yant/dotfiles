@@ -195,3 +195,5 @@ for_window [class=".*"] border pixel 0
 bar {
     i3bar_command $XDG_CONFIG_HOME/polybar/launch.sh
 }
+
+bindsym $mod+m bar mode toggle

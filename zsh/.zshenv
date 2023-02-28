@@ -26,3 +26,7 @@ export DOTFILES="$HOME/src/dotfiles"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+export GDK_BACKEND=x11

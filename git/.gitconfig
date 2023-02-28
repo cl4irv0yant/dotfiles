@@ -1,0 +1,7 @@
+[user]
+	email = gs@gustafsilver.se
+  name = Cl4irv0yant
+
+
+[alias]
+  glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
