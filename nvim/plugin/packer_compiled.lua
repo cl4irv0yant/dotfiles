@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/auto-pairs",
+    url = "https://github.com/jiangmiao/auto-pairs"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -284,6 +289,11 @@ _G.packer_plugins = {
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/quickfix-reflector.vim",
     url = "https://github.com/stefandtw/quickfix-reflector.vim"
   },
+  ["suda.vim"] = {
+    loaded = true,
+    path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/suda.vim",
+    url = "https://github.com/lambdalisue/suda.vim"
+  },
   ["targets.vim"] = {
     loaded = true,
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/targets.vim",
@@ -309,6 +319,11 @@ _G.packer_plugins = {
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/ultisnips",
     url = "https://github.com/SirVer/ultisnips"
   },
+  ["vim-abolish"] = {
+    loaded = true,
+    path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-airline",
@@ -323,6 +338,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-colors-solarized",
     url = "https://github.com/altercation/vim-colors-solarized"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-css-color"] = {
+    loaded = true,
+    path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-css-color",
+    url = "https://github.com/ap/vim-css-color"
   },
   ["vim-easyclip"] = {
     loaded = true,
@@ -344,15 +369,30 @@ _G.packer_plugins = {
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
+  ["vim-highlightedyank"] = {
+    loaded = true,
+    path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-highlightedyank",
+    url = "https://github.com/machakann/vim-highlightedyank"
+  },
   ["vim-illuminate"] = {
     loaded = true,
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
   },
+  ["vim-matchup"] = {
+    loaded = true,
+    path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-matchup",
+    url = "https://github.com/andymass/vim-matchup"
+  },
   ["vim-mundo"] = {
     loaded = true,
     path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-mundo",
     url = "https://github.com/simnalamburt/vim-mundo"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/gud1/.config/local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-sandwich"] = {
     loaded = true,
