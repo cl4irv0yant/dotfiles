@@ -6,7 +6,11 @@ killall -q polybar
 # polybar-msg cmd quit
 
 # Launch Polybar, using default config location ~/.config/polybar/config.ini
-polybar top 2>&1 | tee -a /tmp/polybar.log & disown
-polybar bottom 2>&1 | tee -a /tmp/polybar2.log & disown
-
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload top &
+  done
+else
+  polybar --reload top &
+fi
 echo "Polybar launched..."
