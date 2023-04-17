@@ -13,6 +13,8 @@ exec --no-startup-id blueman-applet
 
 bindsym $mod+Ctrl+h move workspace to output left
 bindsym $mod+Ctrl+l move workspace to output right
+bindsym $mod+Ctrl+j move workspace to output down 
+bindsym $mod+Ctrl+k move workspace to output up
 
 floating_modifier $mod
 bindsym $mod+Return exec urxvtc
@@ -34,6 +36,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
+bindsym $mod+ctrl+f exec "flameshot gui"
 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -95,7 +98,9 @@ assign [class="obsidian" instance="obsidian"] 8
 assign [class="notion-app" instance="notion-app"] 8
 assign [class="pritunl" instance="pritunl"] 9
 assign [class="discord" instance="discord"] 10
+assign [class="zoom" instance="zoom"] 10
 
+for_window [class="Slack"] move to workspace $ws10
 for_window [class="Postman"] move to workspace $ws5
 for_window [class="DBeaver"] move to workspace $ws4
 for_window [class="Lens"] move to workspace $ws6
