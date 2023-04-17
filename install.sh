@@ -20,15 +20,15 @@ ln -s "$DOTFILES/gtk-3.0/settings.ini" "$XDG_CONFIG_HOME/gtk-3.0/"
 #######
 
 rm -rf "$HOME/.gitconfig"
-ln -s "$DOTFILES/.gitconfig" "$HOME"
+ln -s "$DOTFILES/git/.gitconfig" "$HOME"
 
 ########
 # nvim #
 ########
 
-rm -rf $XDG_CONFIG_HOME/nvim
-ln -s "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
-mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
+#rm -rf $XDG_CONFIG_HOME/nvim
+#ln -s "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
+#mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 
 ######
 # i3 #
