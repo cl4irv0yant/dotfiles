@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font Hack NF 12
+font Hack Nerd Font Mono 12
 
 exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh", mode "default"
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -43,6 +43,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
 
 set $ws1 "1"
 set $ws2 "2"
@@ -90,6 +93,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Arandr"] floating enable
 for_window [class="Bitwarden"] floating enable
+for_window [class="Blueberry.py"] floating enable
 
 assign [class = "URxvt"] 1
 assign [class="firefox" instance="Navigator"] 2
@@ -99,6 +103,7 @@ assign [class="notion-app" instance="notion-app"] 8
 assign [class="pritunl" instance="pritunl"] 9
 assign [class="discord" instance="discord"] 10
 assign [class="zoom" instance="zoom"] 10
+assign [class="gitkraken" instance="GitKraken"] 3
 
 for_window [class="Slack"] move to workspace $ws10
 for_window [class="Postman"] move to workspace $ws5
@@ -210,3 +215,14 @@ bar {
 }
 
 bindsym $mod+m bar mode toggle
+
+exec phpstorm
+exec DBeaver
+exec gitkraken
+exec obsidian
+exec notion-app
+exec Slack
+exec zoom
+exec Postman
+exec Lens
+exec pritunl
