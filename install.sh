@@ -5,18 +5,21 @@
 #######
 
 rm -rf "$XDG_CONFIG_HOME/X11"
-ln -sf "$DOTFILES/X11" "$XDG_CONFIG_HOME/X11"
+ln -sf "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
 #######
 # GTK #
 #######
 
+rm -rf "$XDG_CONFIG_HOME/gtk-3.0"
+mkdir "$XDG_CONFIG_HOME/gtk-3.0"
 ln -s "$DOTFILES/gtk-3.0/settings.ini" "$XDG_CONFIG_HOME/gtk-3.0/"
 
 #######
 # Git #
 #######
 
+rm -rf "$HOME/.gitconfig"
 ln -s "$DOTFILES/.gitconfig" "$HOME"
 
 ########
@@ -24,7 +27,7 @@ ln -s "$DOTFILES/.gitconfig" "$HOME"
 ########
 
 rm -rf $XDG_CONFIG_HOME/nvim
-ln -sf "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
+ln -s "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
 mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 
 ######
@@ -34,7 +37,7 @@ mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 rm -rf "$XDG_CONFIG_HOME/i3"
 ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 
-###########
+##########
 # Polybar #
 ###########
 
