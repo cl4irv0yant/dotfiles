@@ -1,11 +1,9 @@
 set $mod Mod4
 
 font Hack Nerd Font Mono 12
-
-exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh", mode "default"
+exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh && sh $DOTFILES/i3/scripts/feh.sh, mode "default"
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id dunst
-exec --no-startup-id sh $DOTFILES/i3/scripts/feh
 exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
 exec --no-startup-id redshift &
@@ -215,14 +213,3 @@ bar {
 }
 
 bindsym $mod+m bar mode toggle
-
-exec phpstorm
-exec DBeaver
-exec gitkraken
-exec obsidian
-exec notion-app
-exec Slack
-exec zoom
-exec Postman
-exec Lens
-exec pritunl

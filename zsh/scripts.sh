@@ -4,6 +4,10 @@ compress() {
     tar cvzf $1.tar.gz $1
 }
 
+ddelete() {
+	docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)
+}
+
 ftmuxp() {
     if [[ -n $TMUX ]]; then
         return
