@@ -101,13 +101,12 @@ assign [class="notion-app" instance="notion-app"] 8
 assign [class="pritunl" instance="pritunl"] 9
 assign [class="discord" instance="discord"] 10
 assign [class="zoom" instance="zoom"] 10
-assign [class="gitkraken" instance="GitKraken"] 3
-
-for_window [class="Slack"] move to workspace $ws10
-for_window [class="Postman"] move to workspace $ws5
-for_window [class="DBeaver"] move to workspace $ws4
-for_window [class="Lens"] move to workspace $ws6
-for_window [class="Anki"] move to workspace $ws7
+assign [class="GitKraken"] 3
+assign [class="Slack"] 10
+assign [class="Postman"] 5
+assign [class="DBeaver"] 4
+assign [class="Lens"] 6
+assign [class="Anki"] 7
 
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
