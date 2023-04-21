@@ -1,11 +1,25 @@
 #!/bin/zsh
 
-compress() {
-    tar cvzf $1.tar.gz $1
+docker-nuke() {
+	docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)
 }
 
-ddelete() {
-	docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)
+
+docker-populate-hosts() {
+    docker_ip | sudo tee -a /etc/hosts
+}
+
+
+docker-ip() {
+    for ID in $(docker ps -q | awk '{print $1}'); do
+        IP=$(docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" "$ID")
+        NAME=$(docker ps | grep "$ID" | awk '{print $NF}')
+        printf "%s %s\n" "$IP" "$NAME"
+    done
+}
+
+compress() {
+    tar cvzf $1.tar.gz $1
 }
 
 ftmuxp() {

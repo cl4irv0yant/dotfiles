@@ -95,7 +95,8 @@ for_window [class="Blueberry.py"] floating enable
 
 assign [class = "URxvt"] 1
 assign [class="firefox" instance="Navigator"] 2
-assign [class="phpstorm" instance="phpstorm"] 3
+assign [class="phpstorm"] 3
+assign [class="TablePlus"] 4
 assign [class="obsidian" instance="obsidian"] 8
 assign [class="notion-app" instance="notion-app"] 8
 assign [class="pritunl" instance="pritunl"] 9
