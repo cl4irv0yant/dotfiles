@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Retrieve the current branch name
+branch_name=$(git symbolic-ref --short HEAD)
+
+# Extract the Jira issue number from the branch name using grep
+jira_issue=$(echo "$branch_name" | grep -oE "(feature|hotfix|chore)/sc-[0-9]+" | grep -oE "sc-[0-9]+")
+
+# If a Jira issue number is found and it does not already exist in the commit message, append it as a suffix after the first line
+if [ -n "$jira_issue" ]; then
+  commit_message_file="$1"
+  if ! grep -q "$jira_issue" "$commit_message_file"; then
+    sed -i.bak "1s/$/ [$jira_issue]/" "$commit_message_file"
+  fi
+fi
+

@@ -2,11 +2,9 @@ alias ll='ls -lah'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+alias nvim='lvim'
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-alias task='go-task'
 alias visudo="sudo EDITOR=nvim visudo"
-alias php=php74
-alias composer='php74 /usr/local/bin/composer'
