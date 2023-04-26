@@ -1,7 +1,43 @@
 #!/bin/zsh
 
+
+fetch_fixtures() {
+  cp -r $HOME/src/fixtures .
+}
+
+
 docker-nuke() {
 	docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q)
+
+}
+
+rebase() {
+    #!/bin/bash
+
+  # Get the current branch name
+  current_branch=$(git symbolic-ref --short HEAD)
+
+  # Check if the current branch name contains "feature/"
+  if [[ $current_branch == *"feature/"* ]]; then
+    target_branch="develop"
+  # Check if the current branch name contains "bug/" or "hotfix/"
+  elif [[ $current_branch == *"bug/"* ]] || [[ $current_branch == *"hotfix/"* ]]; then
+    target_branch="master"
+  # If the current branch name doesn't match any of the above conditions, display an error message and exit
+  else
+    echo "Error: Unsupported branch type. Branch name must include 'feature/', 'bug/', or 'hotfix/'"
+    exit 1
+  fi
+
+  # Perform the rebase
+  echo "Rebasing $current_branch to $target_branch..."
+  git fetch
+  git checkout $target_branch
+  git pull origin $target_branch --rebase
+  git checkout $current_branch
+  git rebase $target_branch
+
+  echo "Rebase complete."
 
 }
 
@@ -12,14 +48,11 @@ code-nuke() {
   docker-nuke
   make build
   make up
+  docker-ip-populate-hosts
+  fetch_fixtures
   make composer
   make refresh-db
-  docker-ip-2
-}
 
-
-docker-populate-hosts() {
-    docker-ip | sudo tee -a /etc/hosts
 }
 
 
@@ -31,19 +64,19 @@ docker-ip() {
     done
 }
 
-docker-ip-2() {
+docker-ip-populate-hosts() {
     # Loop through all running containers
     for ID in $(docker ps -q); do
         IP=$(docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" "$ID")
-        NAME=$(docker ps --format "{{.Names}}" | grep "$ID" | awk '{print $NF}')
+        NAME=$(docker ps | grep "$ID" | awk '{print $NF}')
         
         # Check if the hostname already exists in /etc/hosts
         if grep -q "$NAME" /etc/hosts; then
             # Replace the existing IP address with the new one
-            sudo sed -i "s/^[[:space:]]*$IP[[:space:]]*$NAME$/\t$IP\t$NAME/" /etc/hosts
+            sudo sed -i "/$NAME/ s/.*/$IP\t$NAME/" /etc/hosts
         else
             # Append the new IP address and hostname to /etc/hosts
-            echo -e "\t$IP\t$NAME" | sudo tee -a /etc/hosts > /dev/null
+            echo -e "$IP\t$NAME" | sudo tee -a /etc/hosts > /dev/null
         fi
     done
 }
