@@ -186,9 +186,9 @@ bindsym $mod+BackSpace mode "$mode_system"
 set $mode_display Config monitor resolution - Home Setup (h) - Without monitor (d) - Work (w)
 
 mode "$mode_display" {
-    bindsym h exec --no-startup-id sh $DOTFILES/X11/monitor/home.sh
-    bindsym d exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh 
-    bindsym w exec --no-startup-id sh $DOTFILES/X11/monitor/work.sh
+    bindsym h exec --no-startup-id sh $DOTFILES/X11/monitor/home.sh && exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
+    bindsym d exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh && exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
+    bindsym w exec --no-startup-id sh $DOTFILES/X11/monitor/work.sh && exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -196,7 +196,6 @@ mode "$mode_display" {
 }
 
 bindsym $mod+a mode "$mode_display"
-
 # dunst keyboard shortcuts
 bindsym $mod+x exec dunstctl close-all
 bindsym Ctrl+BackSpace exec dunstctl history-pop

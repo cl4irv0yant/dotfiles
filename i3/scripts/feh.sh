@@ -1,1 +1,1 @@
-feh --randomize --bg-fill $DOTFILES/i3/feh/*
+feh --randomize --bg-scale $DOTFILES/i3/feh/*
