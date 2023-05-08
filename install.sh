@@ -22,6 +22,12 @@ ln -s "$DOTFILES/gtk-3.0/settings.ini" "$XDG_CONFIG_HOME/gtk-3.0/"
 rm -rf "$HOME/.gitconfig"
 ln -s "$DOTFILES/git/.gitconfig" "$HOME"
 
+############
+# redshift #
+############
+
+ln -s "$DOTFILES/redshift/redshift.conf" "$XDG_CONFIG_HOME"
+
 ########
 # nvim #
 ########
