@@ -32,6 +32,11 @@ ln -s "$DOTFILES/redshift/redshift.conf" "$XDG_CONFIG_HOME"
 # nvim #
 ########
 
+############
+# PHPStorm #
+############
+ln -s "$DOTFILES/phpstorm/.ideavimrc" "$HOME"
+
 #rm -rf $XDG_CONFIG_HOME/nvim
 #ln -s "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
 #mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
