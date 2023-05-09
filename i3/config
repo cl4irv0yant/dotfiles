@@ -4,6 +4,7 @@ font Hack Nerd Font Mono 12
 exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh
 exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id picom --config $DOTFILES/picom/picom.conf
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
@@ -121,20 +122,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set_from_resource $foreground foreground
-set_from_resource $background background 
+set_from_resource $colors ~/.config/colors.conf
 set_from_resource $cursorColor cursorColor
 
-set_from_resource $black1 color0 
-set_from_resource $black2 color8
-
-set_from_resource $red1 color1 
-set_from_resource $red2 color9
-
+client.focused          $CP_cyan $CP_cyan $CP_base_dark
+client.unfocused        $CP_base_light $CP_base_light $CP_base_dark
+client.focused_inactive $CP_base_light $CP_base_light $CP_base_dark
+client.urgent           $CP_red $CP_red $CP_base_dark
 set_from_resource $green1 color2 
-set_from_resource $green2 color10 
 
-set_from_resource $yellow1 color3 
 set_from_resource $yellow2 color11 
 
 set_from_resource $blue1 color4 

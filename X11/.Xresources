@@ -1,62 +1,43 @@
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
+! Cyberpunk color definitions
+#define CP_base_dark    #0f111a
+#define CP_base_light   #1a1c26
+#define CP_cyan         #00f0ff
+#define CP_magenta      #ff00ff
+#define CP_yellow       #ffff00
+#define CP_red          #ff3000
+#define CP_blue         #08e8de
+#define CP_green        #00ff00
+#define CP_white        #d6dbe5
 
-*background:            S_base03
-*foreground:            S_base0
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
+! Color settings
+*background:            CP_base_dark
+*foreground:            CP_white
+*fadeColor:             CP_base_dark
+*cursorColor:           CP_cyan
+*pointerColorBackground:CP_base_light
+*pointerColorForeground:CP_cyan
 
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
+! Terminal colors
+*color0:                CP_base_dark
+*color1:                CP_red
+*color2:                CP_green
+*color3:                CP_yellow
+*color4:                CP_blue
+*color5:                CP_magenta
+*color6:                CP_cyan
+*color7:                CP_white
+*color8:                CP_base_light
+*color9:                CP_red
+*color10:               CP_green
+*color11:               CP_yellow
+*color12:               CP_blue
+*color13:               CP_magenta
+*color14:               CP_cyan
+*color15:               CP_white
 
-!! black dark/light
-*color0:                S_base02
-*color8:                S_base03
+URxvt.font: xft:Hack Nerd Font Mono:style=Regular:size=12
+URxvt.boldFont: xft:Hack Nerd Font Mono:style=Regular:size=12
 
-!! red dark/light
-*color1:                S_red
-*color9:                S_orange
-
-!! green dark/light
-*color2:                S_green
-*color10:               S_base01
-
-!! yellow dark/light
-*color3:                S_yellow
-*color11:               S_base00
-
-!! blue dark/light
-*color4:                S_blue
-*color12:               S_base0
-
-!! magenta dark/light
-*color5:                S_magenta
-*color13:               S_violet
-
-!! cyan dark/light
-*color6:                S_cyan
-*color14:               S_base1
-
-!! white dark/light
-*color7:                S_base2
-*color15:               S_base3
-
-URxvt*font: xft:Hack Nerd Font Mono:style=Regular:size=12:pixelsize=12:antialias=true
-URxvt*boldFont: xft:Hack Nerd Font:style=Bold:size=12:antialias=true
 
 URxvt*borderLess: false
 URxvt*externalBorder: 0

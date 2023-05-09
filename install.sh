@@ -7,6 +7,13 @@
 rm -rf "$XDG_CONFIG_HOME/X11"
 ln -sf "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
+#########
+# Picom #
+#########
+
+mkdir -p "$XDG_CONFIG_HOME/picom"
+ln -s "$DOTFILES/picom/picom.conf" "$XDG_CONFIG_HOME/picom/"
+
 #######
 # GTK #
 #######
