@@ -109,7 +109,6 @@ for_window [class="Arandr"] floating enable
 for_window [class="Bitwarden"] floating enable
 for_window [class="Blueberry.py"] floating enable
 
-
 assign [class="firefox" instance="Navigator"] 2
 assign [class="phpstorm"] 3
 assign [class="TablePlus"] 4
@@ -171,7 +170,8 @@ client.placeholder      $red1 $red1 $white2 $red1 $red1
 
 for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
-exec urxvtc -name urxvt_scratchpad \
+
+bindsym $mod+Ctrl+t exec alacritty -name urxvt_scratchpad \
 -e tmux -2 new-session -d -s scratchpad \; \
 new-window -n nvim 'nvim +e /tmp/nvim-tmp.md' \; \
 attach-session -d -t scratchpad
@@ -180,8 +180,9 @@ for_window [instance="htop_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
 exec urxvtc -name htop_scratchpad -e htop
 
-gaps inner 5
+gaps inner 0
 gaps outer 0
+
 for_window [class=".*"] border pixel 0
 hide_edge_borders both
 
