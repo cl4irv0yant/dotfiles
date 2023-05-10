@@ -7,21 +7,26 @@
 rm -rf "$XDG_CONFIG_HOME/X11"
 ln -sf "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
+#############
+# Alacritty #
+#############
+
+rm -rf "$XDG_CONFIG_HOME/alacritty/"
+ln -sf "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
+
 #########
 # Picom #
 #########
 
-rm .rf "$XDG_CONFIG_HOME/picom"
-mkdir -p "$XDG_CONFIG_HOME/picom"
-ln -s "$DOTFILES/picom/picom.conf" "$XDG_CONFIG_HOME/picom/"
+rm -rf "$XDG_CONFIG_HOME/picom"
+ln -s "$DOTFILES/picom/" "$XDG_CONFIG_HOME"
 
 #######
 # GTK #
 #######
 
 rm -rf "$XDG_CONFIG_HOME/gtk-3.0"
-mkdir "$XDG_CONFIG_HOME/gtk-3.0"
-ln -s "$DOTFILES/gtk-3.0/settings.ini" "$XDG_CONFIG_HOME/gtk-3.0/"
+ln -s "$DOTFILES/gtk-3.0" "$XDG_CONFIG_HOME"
 
 #######
 # Git #
@@ -34,8 +39,8 @@ ln -s "$DOTFILES/git/.gitconfig" "$HOME"
 # redshift #
 ############
 
-rm -rf "$DOTFILES/redshift/redshift.conf"
-ln -s "$DOTFILES/redshift/redshift.conf" "$XDG_CONFIG_HOME"
+rm -rf "$XDG_CONFIG_HOME/redshift"
+ln -sf "$DOTFILES/redshift" "$XDG_CONFIG_HOME"
 
 ############
 # PHPStorm #

@@ -3,13 +3,26 @@ set $mod Mod4
 font Hack Nerd Font Mono 10
 exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh
 exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id picom --config $DOTFILES/picom/picom.conf
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
 exec --no-startup-id redshift &
+exec --no-startup-id udiskie &
 exec --no-startup-id blueman-applet
+exec --no-startup-id firefox
+exec --no-startup-id phpstorm
+exec --no-startup-id tableplus
+exec --no-startup-id obsidian
+exec --no-startup-id notion-app
+exec --no-startup-id pritunl
+exec --no-startup-id discord
+exec --no-startup-id zoom
+exec --no-startup-id gitkraken
+exec --no-startup-id slack
+exec --no-startup-id postman
+exec --no-startup-id DBeaver
+exec --no-startup-id lens
+exec --no-startup-id Anki
 
 bindsym $mod+Ctrl+h move workspace to output left
 bindsym $mod+Ctrl+l move workspace to output right
@@ -17,10 +30,14 @@ bindsym $mod+Ctrl+j move workspace to output down
 bindsym $mod+Ctrl+k move workspace to output up
 
 floating_modifier $mod
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec "rofi -modi drun,run -show drun"
 bindsym $mod+h focus left
+bindsym $mod+d exec $DOTFILES/rofi/rofi-application-menu.sh
+bindsym $mod+a exec $DOTFILES/rofi/rofi-monitor-menu.sh
+bindsym $mod+BackSpace exec $DOTFILES/rofi/rofi-power-menu.sh
+bindsym $mod+x exec dunstctl close-all
+bindsym Ctrl+BackSpace exec dunstctl history-pop
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
@@ -38,9 +55,9 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+ctrl+f exec "flameshot gui"
 
-bindsym XF86AudioRaiseVolume exec $DOTFILES/change_volume.sh up
-bindsym XF86AudioLowerVolume exec $DOTFILES/change_volume.sh down
-bindsym XF86AudioMute exec $DOTFILES/change_volume.sh mute
+bindsym XF86AudioRaiseVolume exec $DOTFILES/scripts/change_volume.sh up
+bindsym XF86AudioLowerVolume exec $DOTFILES/scripts/change_volume.sh down
+bindsym XF86AudioMute exec $DOTFILES/scripts/change_volume.sh mute
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
@@ -89,7 +106,7 @@ for_window [class="Arandr"] floating enable
 for_window [class="Bitwarden"] floating enable
 for_window [class="Blueberry.py"] floating enable
 
-assign [class = "URxvt"] 1
+
 assign [class="firefox" instance="Navigator"] 2
 assign [class="phpstorm"] 3
 assign [class="TablePlus"] 4
@@ -110,12 +127,9 @@ mode "resize" {
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
-
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 set_from_resource $foreground foreground
@@ -152,9 +166,6 @@ client.unfocused        $background $background $black2 $background
 client.urgent           $red1 $red1 $white2 $red1 $red1
 client.placeholder      $red1 $red1 $white2 $red1 $red1
 
-hide_edge_borders both
-for_window [class="URxvt*"] border pixel 0
-
 for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
 exec urxvtc -name urxvt_scratchpad \
@@ -166,15 +177,10 @@ for_window [instance="htop_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
 exec urxvtc -name htop_scratchpad -e htop
 
-bindsym $mod+a exec $DOTFILES/rofi/rofi-monitor-menu.sh
-bindsym $mod+BackSpace exec $DOTFILES/rofi/rofi-power-menu.sh
-
-bindsym $mod+x exec dunstctl close-all
-bindsym Ctrl+BackSpace exec dunstctl history-pop
-
-gaps inner 0
+gaps inner 5
 gaps outer 0
 for_window [class=".*"] border pixel 0
+hide_edge_borders both
 
 bar {
     i3bar_command $XDG_CONFIG_HOME/polybar/launch.sh

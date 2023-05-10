@@ -1,7 +1,7 @@
 *foreground:   #AAB2BF
 *background:   #0F0F14
-*cursorColor:  #FFFFFF
-*highlightColor: #FF00FF
+*cursor:  #FFFFFF
+*highlight: #FF00FF
 
 ! black
 *color0:       #1F1B24
@@ -34,22 +34,3 @@
 ! white
 *color7:       #AAB2BF
 *color15:      #CCD4E4
-
-
-URxvt.font: xft:Hack Nerd Font:size=10
-URxvt.boldFont: xft:Hack Nerd Font:size=10
-URxvt.italicFont: xft:Hack Nerd Font:size=10
-URxvt.boldItalicFont: xft:Hack Nerd Font:size=10
-
-URxvt.scrollBar: false
-URxvt.internalBorder: 0
-URxvt.externalBorder: 0
-
-! URxvt.transparent: true
-! URxvt.shading: 20
-
-URxvt*perl-ext-common: default,resize-font
-URxvt.keysym.C-minus: resize-font:smaller
-URxvt.keysym.C-plus: resize-font:bigger
-URxvt.keysym.C-equal: resize-font:reset
-URxvt.keysym.C-question: resize-font:show
