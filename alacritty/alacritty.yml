@@ -1,0 +1,34 @@
+colors:
+  bright:
+    black: '#5E5079'
+    blue: '#589CFF'
+    cyan: '#48FFFC'
+    green: '#1AFFC1'
+    magenta: '#FFA6FF'
+    red: '#FF4C8E'
+    white: '#CCD4E4'
+    yellow: '#FFF476'
+  normal:
+    black: '#1F1B24'
+    blue: '#3783FF'
+    cyan: '#26EDDF'
+    green: '#0AD2AB'
+    magenta: '#FB94FF'
+    red: '#FF2C6D'
+    white: '#AAB2BF'
+    yellow: '#FFE156'
+  primary:
+    background: '#1F1B24'
+    foreground: '#AAB2BF'
+font:
+  bold:
+    family: Hack Nerd Font
+    style: Bold
+  italic:
+    family: Hack Nerd Font
+    style: Italic
+  normal:
+    family: Hack Nerd Font
+    style: Regular
+  size: 12.0
+scrollback_lines: 5000

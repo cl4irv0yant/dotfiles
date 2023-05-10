@@ -8,21 +8,24 @@ exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
 exec --no-startup-id redshift &
 exec --no-startup-id udiskie &
+exec --no-startup-id picom &
 exec --no-startup-id blueman-applet
+
+exec --no-startup-id alacritty
 exec --no-startup-id firefox
 exec --no-startup-id phpstorm
 exec --no-startup-id tableplus
 exec --no-startup-id obsidian
 exec --no-startup-id notion-app
-exec --no-startup-id pritunl
+exec --no-startup-id pritunl-client
 exec --no-startup-id discord
 exec --no-startup-id zoom
 exec --no-startup-id gitkraken
 exec --no-startup-id slack
 exec --no-startup-id postman
-exec --no-startup-id DBeaver
-exec --no-startup-id lens
-exec --no-startup-id Anki
+exec --no-startup-id dbeaver
+exec --no-startup-id lens-desktop
+exec --no-startup-id anki
 
 bindsym $mod+Ctrl+h move workspace to output left
 bindsym $mod+Ctrl+l move workspace to output right

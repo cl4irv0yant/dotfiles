@@ -18,3 +18,5 @@ else
 fi
 
 xset dpms force on
+
+$DOTFILES/i3/scripts/feh.sh
