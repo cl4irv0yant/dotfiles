@@ -166,46 +166,17 @@ for_window [instance="htop_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
 exec urxvtc -name htop_scratchpad -e htop
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown
-mode "$mode_system" {
-	bindsym l exec --no-startup-id $i3lockwall, mode "default"
-	bindsym e exec --no-startup-id i3-msg exit, mode "default"
-	bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
-	bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
-	bindsym r exec --no-startup-id systemctl reboot, mode "default"
-	bindsym CTRL+s exec --no-startup-id systemctl poweroff -i, mode "default"
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
+bindsym $mod+a exec $DOTFILES/rofi/rofi-monitor-menu.sh
 bindsym $mod+BackSpace exec $DOTFILES/rofi/rofi-power-menu.sh
 
-## Manual management of external displays
-set $mode_display Config monitor resolution - Home Setup (h) - Without monitor (d) - Work (w)
-
-mode "$mode_display" {
-    bindsym h exec --no-startup-id sh $DOTFILES/X11/monitor/home.sh && exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
-    bindsym d exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh && exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
-    bindsym w exec --no-startup-id sh $DOTFILES/X11/monitor/work.sh && exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+a mode "$mode_display"
-# dunst keyboard shortcuts
 bindsym $mod+x exec dunstctl close-all
 bindsym Ctrl+BackSpace exec dunstctl history-pop
 
-bindsym $mod+z exec "setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape' &"
-
-gaps inner 5
-gaps outer 5
+gaps inner 0
+gaps outer 0
 for_window [class=".*"] border pixel 0
 
 bar {
     i3bar_command $XDG_CONFIG_HOME/polybar/launch.sh
 }
-
-bindsym $mod+m bar mode toggle
 
