@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font Hack Nerd Font Mono 12
+font Hack Nerd Font Mono 10
 exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh
 exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -38,12 +38,11 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+ctrl+f exec "flameshot gui"
 
-set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec $DOTFILES/change_volume.sh up
 bindsym XF86AudioLowerVolume exec $DOTFILES/change_volume.sh down
 bindsym XF86AudioMute exec $DOTFILES/change_volume.sh mute
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 set $ws1 "1"
 set $ws2 "2"
@@ -80,9 +79,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 workspace_auto_back_and_forth yes
 focus_follows_mouse no
-
-set $i3lockwall sh $DOTFILES/i3/scripts/lock.sh
-bindsym $mod+CTRL+Shift+q exec --no-startup-id $i3lockwall
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -122,37 +118,42 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set_from_resource $colors ~/.config/colors.conf
-set_from_resource $cursorColor cursorColor
+set_from_resource $foreground foreground
+set_from_resource $background background
 
-client.focused          $CP_cyan $CP_cyan $CP_base_dark
-client.unfocused        $CP_base_light $CP_base_light $CP_base_dark
-client.focused_inactive $CP_base_light $CP_base_light $CP_base_dark
-client.urgent           $CP_red $CP_red $CP_base_dark
+set_from_resource $black1  color0
+set_from_resource $black2 color8
+
+set_from_resource $red1 color1 
+set_from_resource $red2 color9 
+
 set_from_resource $green1 color2 
+set_from_resource $green2 color10 
 
+set_from_resource $yellow1 color3 
 set_from_resource $yellow2 color11 
 
 set_from_resource $blue1 color4 
-set_from_resource $blue2 color12 
+set_from_resource $blue2 color12
 
-set_from_resource $cyan1 color5 
-set_from_resource $cyan2 color13 
+set_from_resource $magenta1 color5 
+set_from_resource $magenta2 color13
 
 set_from_resource $cyan1 color6 
-set_from_resource $cyan2 color14 
+set_from_resource $cyan2 color14
 
 set_from_resource $white1 color7 
-set_from_resource $white2 color15 
+set_from_resource $white2 color15
 
-hide_edge_borders both
-for_window [class="URxvt*"] border pixel 0
-
+# Format: client.<state> <border> <background> <text> <indicator> <child_border>
 client.focused          $background $black1 $white2 $background
 client.focused_inactive $background $black1 $black2 $background
 client.unfocused        $background $background $black2 $background
 client.urgent           $red1 $red1 $white2 $red1 $red1
 client.placeholder      $red1 $red1 $white2 $red1 $red1
+
+hide_edge_borders both
+for_window [class="URxvt*"] border pixel 0
 
 for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
@@ -176,7 +177,7 @@ mode "$mode_system" {
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
-bindsym $mod+BackSpace mode "$mode_system"
+bindsym $mod+BackSpace exec $DOTFILES/rofi/rofi-power-menu.sh
 
 ## Manual management of external displays
 set $mode_display Config monitor resolution - Home Setup (h) - Without monitor (d) - Work (w)
@@ -208,8 +209,3 @@ bar {
 
 bindsym $mod+m bar mode toggle
 
-# Increase brightness
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-
-# Decrease brightness
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-

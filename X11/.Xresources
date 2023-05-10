@@ -1,64 +1,55 @@
-! Cyberpunk color definitions
-#define CP_base_dark    #0f111a
-#define CP_base_light   #1a1c26
-#define CP_cyan         #00f0ff
-#define CP_magenta      #ff00ff
-#define CP_yellow       #ffff00
-#define CP_red          #ff3000
-#define CP_blue         #08e8de
-#define CP_green        #00ff00
-#define CP_white        #d6dbe5
+*foreground:   #AAB2BF
+*background:   #0F0F14
+*cursorColor:  #FFFFFF
+*highlightColor: #FF00FF
 
-! Color settings
-*background:            CP_base_dark
-*foreground:            CP_white
-*fadeColor:             CP_base_dark
-*cursorColor:           CP_cyan
-*pointerColorBackground:CP_base_light
-*pointerColorForeground:CP_cyan
+! black
+*color0:       #1F1B24
+*color8:       #5E5079
 
-! Terminal colors
-*color0:                CP_base_dark
-*color1:                CP_red
-*color2:                CP_green
-*color3:                CP_yellow
-*color4:                CP_blue
-*color5:                CP_magenta
-*color6:                CP_cyan
-*color7:                CP_white
-*color8:                CP_base_light
-*color9:                CP_red
-*color10:               CP_green
-*color11:               CP_yellow
-*color12:               CP_blue
-*color13:               CP_magenta
-*color14:               CP_cyan
-*color15:               CP_white
+! red
+*color1:       #FF2C6D
+*color9:       #FF4C8E
 
-URxvt.font: xft:Hack Nerd Font Mono:style=Regular:size=12
-URxvt.boldFont: xft:Hack Nerd Font Mono:style=Regular:size=12
+! green
+*color2:       #0AD2AB
+*color10:      #1AFFC1
+
+! yellow
+*color3:       #FFE156
+*color11:      #FFF476
+
+! blue
+*color4:       #3783FF
+*color12:      #589CFF
+
+! magenta
+*color5:       #FB94FF
+*color13:      #FFA6FF
+
+! cyan
+*color6:       #26EDDF
+*color14:      #48FFFC
+
+! white
+*color7:       #AAB2BF
+*color15:      #CCD4E4
 
 
-URxvt*borderLess: false
-URxvt*externalBorder: 0
-URxvt*internalBorder: 0
+URxvt.font: xft:Hack Nerd Font:size=10
+URxvt.boldFont: xft:Hack Nerd Font:size=10
+URxvt.italicFont: xft:Hack Nerd Font:size=10
+URxvt.boldItalicFont: xft:Hack Nerd Font:size=10
 
-URxvt*depth: 32
-URxvt.background: [85]#181815
-URxvt*scrollBar: false
-URxvt*cursorColor: #ffffff
-URxvt*termName: rxvt-unicode
-URxvt*saveLines: 5000
-URxvt*letterSpace: -1
+URxvt.scrollBar: false
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
 
-URxvt*inheritPixmap: true
-URxvt*transparent: true
-URxvt*shading: 25
-URxvt*perl-ext-common: resize-font
+! URxvt.transparent: true
+! URxvt.shading: 20
 
+URxvt*perl-ext-common: default,resize-font
 URxvt.keysym.C-minus: resize-font:smaller
 URxvt.keysym.C-plus: resize-font:bigger
 URxvt.keysym.C-equal: resize-font:reset
 URxvt.keysym.C-question: resize-font:show
-
-Xcursor.size: 12
