@@ -17,7 +17,7 @@ exec --no-startup-id phpstorm
 exec --no-startup-id tableplus
 exec --no-startup-id obsidian
 exec --no-startup-id notion-app
-exec --no-startup-id pritunl-client
+exec --no-startup-id pritunl-client-electron
 exec --no-startup-id discord
 exec --no-startup-id zoom
 exec --no-startup-id gitkraken
@@ -108,7 +108,9 @@ for_window [window_role="task_dialog"] floating enable
 for_window [class="Arandr"] floating enable
 for_window [class="Bitwarden"] floating enable
 for_window [class="Blueberry.py"] floating enable
+for_window [class="pritunl"] floating enable
 
+assign [class="Alacritty"] 1
 assign [class="firefox" instance="Navigator"] 2
 assign [class="phpstorm"] 3
 assign [class="TablePlus"] 4
