@@ -19,7 +19,7 @@ ln -sf "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
 #########
 
 rm -rf "$XDG_CONFIG_HOME/picom"
-ln -s "$DOTFILES/picom/" "$XDG_CONFIG_HOME"
+ln -s "$DOTFILES/picom" "$XDG_CONFIG_HOME"
 
 #######
 # GTK #
@@ -27,6 +27,9 @@ ln -s "$DOTFILES/picom/" "$XDG_CONFIG_HOME"
 
 rm -rf "$XDG_CONFIG_HOME/gtk-3.0"
 ln -s "$DOTFILES/gtk-3.0" "$XDG_CONFIG_HOME"
+
+rm -rf "$HOME/.gtkrc-2.0"
+ln -s "$DOTFULES/gtk-2.0/.gtkrc-2.0" $HOME
 
 #######
 # Git #
@@ -53,8 +56,8 @@ ln -s "$DOTFILES/phpstorm/.ideavimrc" "$HOME"
 # nvim #
 ########
 
-rm -rf $XDG_CONFIG_HOME/nvim
-ln -s "$DOTFILES/nvim" "$XDG_CONFIG_HOME/nvim"
+rm -rf "$XDG_CONFIG_HOME/nvim"
+ln -s "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
 
 ######
 # i3 #
@@ -92,15 +95,15 @@ ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 # dunst #
 #########
 
-mkdir -p "$XDG_CONFIG_HOME/dunst"
-ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
+rm -rf "$XDG_CONFIG_HOME/dunst"
+ln -sf "$DOTFILES/dunst" "$XDG_CONFIG_HOME"
 
 ########
 # tmux #
 ########
 
-mkdir -p "$XDG_CONFIG_HOME/tmux"
-ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
+rm -rf "$XDG_CONFIG_HOME/tmux"
+ln -sf "$DOTFILES/tmux" "$XDG_CONFIG_HOME"
 
 [ ! -d "$XDG_CONFIG_HOME/tmux/plugins" ] \
 && git clone https://github.com/tmux-plugins/tpm \

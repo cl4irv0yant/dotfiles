@@ -1,7 +1,6 @@
 [user]
 	email = gustaf.silver@sweetspot.io
 	name = Gustaf Silver
-
 [alias]
   glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
 [core]
