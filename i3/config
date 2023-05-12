@@ -15,17 +15,17 @@ exec --no-startup-id alacritty
 exec --no-startup-id firefox
 exec --no-startup-id phpstorm
 exec --no-startup-id tableplus
+exec --no-startup-id dbeaver
+exec --no-startup-id gitkraken
+exec --no-startup-id postman
+exec --no-startup-id lens-desktop
+exec --no-startup-id anki
 exec --no-startup-id obsidian
 exec --no-startup-id notion-app
 exec --no-startup-id pritunl-client-electron
 exec --no-startup-id discord
 exec --no-startup-id zoom
-exec --no-startup-id gitkraken
 exec --no-startup-id slack
-exec --no-startup-id postman
-exec --no-startup-id dbeaver
-exec --no-startup-id lens-desktop
-exec --no-startup-id anki
 
 bindsym $mod+Ctrl+h move workspace to output left
 bindsym $mod+Ctrl+l move workspace to output right
@@ -109,22 +109,23 @@ for_window [class="Arandr"] floating enable
 for_window [class="Bitwarden"] floating enable
 for_window [class="Blueberry.py"] floating enable
 for_window [class="pritunl"] floating enable
+for_window [class="1Password"] floating enable
 
 assign [class="Alacritty"] 1
 assign [class="firefox" instance="Navigator"] 2
 assign [class="phpstorm"] 3
+assign [class="GitKraken"] 3
+assign [class="DBeaver"] 4
 assign [class="TablePlus"] 4
+assign [class="Postman"] 5
+assign [class="Lens"] 6
+assign [class="Anki"] 7
 assign [class="obsidian" instance="obsidian"] 8
 assign [class="notion-app" instance="notion-app"] 8
 assign [class="pritunl" instance="pritunl"] 9
-assign [class="discord" instance="discord"] 10
-assign [class="zoom" instance="zoom"] 10
-assign [class="GitKraken"] 3
 assign [class="Slack"] 10
-assign [class="Postman"] 5
-assign [class="DBeaver"] 4
-assign [class="Lens"] 6
-assign [class="Anki"] 7
+assign [class="zoom" instance="zoom"] 10
+assign [class="discord" instance="discord"] 10
 
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt

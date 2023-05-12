@@ -31,4 +31,11 @@ font:
     family: Hack Nerd Font
     style: Regular
   size: 12.0
+key_bindings:
+- action: IncreaseFontSize
+  key: Plus
+  mods: Control
+- action: DecreaseFontSize
+  key: Minus
+  mods: Control
 scrollback_lines: 5000
