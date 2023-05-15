@@ -1,7 +1,5 @@
 set $mod Mod4
 
-exec_always --no-startup-id sh $DOTFILES/scripts/ui/set_colors.py
-
 font Hack Nerd Font Mono 10
 exec --no-startup-id sh $DOTFILES/scripts/monitor/default.sh
 exec --no-startup-id sh $DOTFILES/scripts/ui/feh.sh
