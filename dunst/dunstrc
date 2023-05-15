@@ -14,7 +14,7 @@
 
     stack_duplicates = true
 
-    geometry = "300x5-30+20"
+    geometry = "300x5-0-30"
     transparency = 10
     idle_threshold = 999
     monitor = 0

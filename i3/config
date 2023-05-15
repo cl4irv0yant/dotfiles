@@ -1,8 +1,10 @@
 set $mod Mod4
 
+exec_always --no-startup-id sh $DOTFILES/scripts/ui/set_colors.py
+
 font Hack Nerd Font Mono 10
-exec --no-startup-id sh $DOTFILES/X11/monitor/default.sh
-exec --no-startup-id sh $DOTFILES/i3/scripts/feh.sh
+exec --no-startup-id sh $DOTFILES/scripts/monitor/default.sh
+exec --no-startup-id sh $DOTFILES/scripts/ui/feh.sh
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
@@ -58,12 +60,12 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+ctrl+f exec "flameshot gui"
 
-bindsym XF86AudioRaiseVolume exec $DOTFILES/scripts/change_volume.sh up
-bindsym XF86AudioLowerVolume exec $DOTFILES/scripts/change_volume.sh down
-bindsym XF86AudioMute exec $DOTFILES/scripts/change_volume.sh mute
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
-
+bindsym XF86AudioRaiseVolume exec $DOTFILES/scripts/control/change_volume.sh up
+bindsym XF86AudioLowerVolume exec $DOTFILES/scripts/control/change_volume.sh down
+bindsym XF86AudioMute exec $DOTFILES/scripts/control/change_volume.sh mute
+bindsym XF86MonBrightnessUp exec $DOTFILES/scripts/control/change_brightness.sh up
+bindsym XF86MonBrightnessDown exec $DOTFILES/scripts/control/change_brightness.sh down
+ 
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -190,6 +192,6 @@ for_window [class=".*"] border pixel 0
 hide_edge_borders both
 
 bar {
-    i3bar_command $XDG_CONFIG_HOME/polybar/launch.sh
+    i3bar_command $DOTFILES/polybar/launch.sh
 }
 
