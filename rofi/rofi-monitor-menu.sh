@@ -11,12 +11,12 @@ options="$option0\n$option1\n$option2"
 selected="$(echo -e "$options" | rofi -lines 3 -dmenu -p "monitor config")"
 case $selected in
   $option0)
-    sh $DOTFILES/X11/monitor/home.sh && sh $DOTFILES/i3/scripts/feh.sh
+    sh $DOTFILES/scripts/monitor_home.sh && sh $DOTFILES/scripts/feh.sh
     ;;
   $option1)
-    sh $DOTFILES/X11/monitor/default.sh && sh $DOTFILES/i3/scripts/feh.sh
+    sh $DOTFILES/scripts/monitor_default.sh && sh $DOTFILES/scripts/feh.sh
     ;;
   $option2)
-    sh $DOTFILES/X11/monitor/work.sh && sh $DOTFILES/i3/scripts/feh.sh
+    sh $DOTFILES/scripts/monitor_work.sh && sh $DOTFILES/scripts/feh.sh
     ;;
 esac
