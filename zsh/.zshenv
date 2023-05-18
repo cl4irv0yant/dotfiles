@@ -1,3 +1,6 @@
+export GDK_SCALE=1.5
+export QT_SCALE_FACTOR=1.5
+
 export PATH="$HOME/.local/bin:$PATH"
 
 # For dotfiles
