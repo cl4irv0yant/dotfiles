@@ -11,7 +11,7 @@ external_monitor=$(xrandr | awk '/ connected/ && /DP-/ {print $1}' | tail -n 1 )
 
 # If both monitors are found, configure them
 if [ -n "$laptop_monitor" ] && [ -n "$external_monitor" ]; then
-    if xrandr --output "$laptop_monitor" --primary --mode 1920x1200 --output "$external_monitor" --mode 1920x1080 --above "$laptop_monitor"; then
+    if xrandr --output "$laptop_monitor" --primary --mode 3840x2400 --output "$external_monitor" --mode 3840x2160 --above "$laptop_monitor"; then
         xset dpms force on
     else
         echo "xrandr failed to configure the monitors."

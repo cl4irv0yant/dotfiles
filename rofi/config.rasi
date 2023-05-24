@@ -4,7 +4,7 @@ configuration {
     lines: 15;
     columns: 1;
     width: 80%;
-    font: "Fira Code Regular 14";
+    font: "Hack Nerd Font 20";
     hide-scrollbar: true;
     sidebar-mode: false;
     color-enabled: true;
@@ -26,7 +26,7 @@ configuration {
     urgent-background: "#cc6666";
     header {
         name: "Applications";
-        font: "Fira Code Bold 14";
+        font: "Hack Nerd Font 20";
         background-color: "@background-color";
         foreground-color: "@foreground-color";
     }
