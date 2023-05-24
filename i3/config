@@ -1,7 +1,7 @@
 set $mod Mod4
 
 font Hack Nerd Font Mono 20
-#exec --no-startup-id sh $DOTFILES/scripts/monitor/default.sh
+exec --no-startup-id sh $DOTFILES/scripts/monitor/default.sh
 exec --no-startup-id sh $DOTFILES/scripts/ui/feh.sh
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
@@ -15,16 +15,11 @@ exec --no-startup-id alacritty
 exec --no-startup-id firefox
 exec --no-startup-id phpstorm
 exec --no-startup-id tableplus
-exec --no-startup-id dbeaver
-exec --no-startup-id gitkraken
 exec --no-startup-id postman
-exec --no-startup-id lens-desktop
 exec --no-startup-id anki
 exec --no-startup-id obsidian
 exec --no-startup-id notion-app
-exec --no-startup-id pritunl-client-electron
 exec --no-startup-id discord
-exec --no-startup-id zoom
 exec --no-startup-id slack
 
 bindsym $mod+Ctrl+h move workspace to output left
@@ -36,11 +31,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 bindsym $mod+h focus left
-bindsym $mod+d exec $DOTFILES/rofi/rofi-application-menu.sh
-bindsym $mod+a exec $DOTFILES/rofi/rofi-monitor-menu.sh
-bindsym $mod+BackSpace exec $DOTFILES/rofi/rofi-power-menu.sh
-bindsym $mod+x exec dunstctl close-all
-bindsym Ctrl+BackSpace exec dunstctl history-pop
+
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
@@ -58,8 +49,18 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+ctrl+f exec "flameshot gui"
 
+# Dunst
+bindsym $mod+x exec dunstctl close-all
+bindsym Ctrl+BackSpace exec dunstctl history-pop
 bindsym $mod+shift+d exec killall -SIGUSR1 dunst
 bindsym $mod+shift+n exec killall -SIGUSR2 dunst
+
+# Rofi
+bindsym $mod+d exec $DOTFILES/rofi/rofi-application-menu.sh
+bindsym $mod+a exec $DOTFILES/rofi/rofi-monitor-menu.sh
+bindsym $mod+BackSpace exec $DOTFILES/rofi/rofi-power-menu.sh
+bindsym $mod+t exec $DOTFILES/rofi/rofi-add-task.sh
+bindsym $mod+shift+t exec $DOTFILES/rofi/rofi-view-tasks.sh
 
 bindsym XF86AudioRaiseVolume exec $DOTFILES/scripts/control/change_volume.sh up
 bindsym XF86AudioLowerVolume exec $DOTFILES/scripts/control/change_volume.sh down
