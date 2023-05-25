@@ -24,7 +24,7 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 export DOTFILES="$HOME/src/dotfiles"
-export INSTALLER="$HOME/src/arch_installer"
+export INSTALLER="$HOME/src/arch_install"
 
 # fzf and ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
