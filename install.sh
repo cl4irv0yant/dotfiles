@@ -14,6 +14,13 @@ ln -sf "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 rm -rf "$XDG_CONFIG_HOME/alacritty/"
 ln -sf "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
 
+###########
+# Zathura #
+###########
+
+rm -rf "$XDG_CONFIG_HOME/zathura/"
+ln -sf "$DOTFILES/zathura/" "$XDG_CONFIG_HOME"
+
 #########
 # Picom #
 #########
