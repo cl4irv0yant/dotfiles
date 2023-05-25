@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font Hack Nerd Font 20
+font pango:Hack Nerd Font Mono 30
 exec --no-startup-id sh $DOTFILES/scripts/monitor/default.sh
 exec --no-startup-id sh $DOTFILES/scripts/ui/feh.sh
 exec --no-startup-id dunst
