@@ -3,7 +3,7 @@ configuration {
     location: 0;
     lines: 15;
     columns: 1;
-    width: 80%;
+    width: 50%;
     font: "Hack Nerd Font 20";
     hide-scrollbar: true;
     sidebar-mode: false;

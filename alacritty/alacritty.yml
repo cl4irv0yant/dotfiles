@@ -30,7 +30,7 @@ font:
   normal:
     family: Hack Nerd Font
     style: Regular
-  size: 12.0
+  size: 8
 key_bindings:
 - action: IncreaseFontSize
   key: Plus
