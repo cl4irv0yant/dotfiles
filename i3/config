@@ -2,7 +2,7 @@ set $mod Mod4
 
 font pango:Hack Nerd Font Mono 20
 exec --no-startup-id sh $DOTFILES/scripts/monitor/default.sh
-exec --no-startup-id sh $DOTFILES/scripts/ui/feh.sh
+exec --no-startup-id sh $DOTFILES/scripts/feh.sh
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id unclutter

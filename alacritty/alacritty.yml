@@ -1,25 +1,25 @@
 colors:
   bright:
-    black: '#5E5079'
-    blue: '#589CFF'
-    cyan: '#48FFFC'
-    green: '#1AFFC1'
-    magenta: '#FFA6FF'
-    red: '#FF4C8E'
-    white: '#CCD4E4'
-    yellow: '#FFF476'
+    black: '#545875'
+    blue: '#7AA2F7'
+    cyan: '#2AC3DE'
+    green: '#9ECE6A'
+    magenta: '#BB9AF7'
+    red: '#F7768E'
+    white: '#A9B1D6'
+    yellow: '#E0AF68'
   normal:
-    black: '#1F1B24'
-    blue: '#3783FF'
-    cyan: '#26EDDF'
-    green: '#0AD2AB'
-    magenta: '#FB94FF'
-    red: '#FF2C6D'
-    white: '#AAB2BF'
-    yellow: '#FFE156'
+    black: '#1A1B26'
+    blue: '#7AA2F7'
+    cyan: '#2AC3DE'
+    green: '#9ECE6A'
+    magenta: '#BB9AF7'
+    red: '#F7768E'
+    white: '#A9B1D6'
+    yellow: '#E0AF68'
   primary:
-    background: '#1F1B24'
-    foreground: '#AAB2BF'
+    background: '#1A1B26'
+    foreground: '#A9B1D6'
 font:
   bold:
     family: Hack Nerd Font
