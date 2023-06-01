@@ -1,6 +1,5 @@
 #!/bin/sh
 
-percent=$(acpi -b | awk '{print $4}' | sed 's/%,//')
 state=$(acpi -b | awk '{print $3}' | sed 's/,//')
 
 if [ "$state" = "Charging" ]; then
@@ -17,4 +16,4 @@ else
     icon=""
 fi
 
-echo "$icon $percent"
+echo "$icon"
