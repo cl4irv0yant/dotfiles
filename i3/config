@@ -6,7 +6,7 @@ exec --no-startup-id sh $DOTFILES/scripts/ui/feh.sh
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
-exec --no-startup-id redshift &
+exec --no-startup-id redshift
 exec --no-startup-id udiskie &
 exec --no-startup-id picom &
 exec --no-startup-id blueman-applet
@@ -61,6 +61,9 @@ bindsym $mod+a exec $DOTFILES/rofi/rofi-monitor-menu.sh
 bindsym $mod+BackSpace exec $DOTFILES/rofi/rofi-power-menu.sh
 bindsym $mod+t exec $DOTFILES/rofi/rofi-add-task.sh
 bindsym $mod+shift+t exec $DOTFILES/rofi/rofi-view-tasks.sh
+bindsym $mod+shift+f exec $DOTFILES/rofi/rofi-add-note.sh
+bindsym $mod+o exec $DOTFILES/rofi/rofi-open-note.sh
+bindsym $mod+shift+p exec $DOTFILES/rofi/rofi-paste-clipboard.sh
 
 bindsym XF86AudioRaiseVolume exec $DOTFILES/scripts/control/change_volume.sh up
 bindsym XF86AudioLowerVolume exec $DOTFILES/scripts/control/change_volume.sh down
@@ -185,7 +188,7 @@ new-window -n nvim 'nvim +e /tmp/nvim-tmp.md' \; \
 attach-session -d -t scratchpad
 
 for_window [instance="htop_scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
+# bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
 exec urxvtc -name htop_scratchpad -e htop
 
 gaps inner 0
