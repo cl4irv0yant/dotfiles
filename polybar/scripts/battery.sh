@@ -1,6 +1,7 @@
 #!/bin/sh
 
 state=$(acpi -b | awk '{print $3}' | sed 's/,//')
+percent=$(acpi -b | awk '{print $4}' | sed 's/%//')
 
 if [ "$state" = "Charging" ]; then
     icon=""
