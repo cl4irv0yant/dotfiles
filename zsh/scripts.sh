@@ -36,16 +36,12 @@ rebase() {
 }
 
 code-nuke() {
-  sudo -rm -rf docker/mysql/data
-  rm -rf var
-  rm -rf vendor
   docker-nuke
+  sudo rm -rf docker/mysql/data
+  sudo rm -rf var
+  sudo rm -rf vendor
   make build
-  make up
-  docker-ip-populate-hosts
-  fetch_fixtures
-  make composer
-  make refresh-db
+  make uph && make composer && make refresh-db
 
 }
 
