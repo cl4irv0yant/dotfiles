@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+  echo "Usage: $0 <tool: phpcs|phpcbf|phpmd|phpstan|php-cs-fixer|psalm> <arguments>"
+  exit 1
+fi
+
+tool=$1
+shift
+
+docker_args="$@"
+
+docker_args=${docker_args/\/home\/gustaf\/src\/sweetspot-api-platform/\/srv}
+docker exec sweetspot-api-php sh -c "${tool} $docker_args"
+

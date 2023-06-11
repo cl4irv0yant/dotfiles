@@ -56,6 +56,7 @@ bindsym $mod+shift+d exec killall -SIGUSR1 dunst
 bindsym $mod+shift+n exec killall -SIGUSR2 dunst
 
 # Rofi
+bindsym $mod+z exec $DOTFILES/rofi/rofi-zathura.sh
 bindsym $mod+d exec $DOTFILES/rofi/rofi-application-menu.sh
 bindsym $mod+a exec $DOTFILES/rofi/rofi-monitor-menu.sh
 bindsym $mod+BackSpace exec $DOTFILES/rofi/rofi-power-menu.sh
