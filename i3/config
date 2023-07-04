@@ -1,14 +1,12 @@
 set $mod Mod4
 
 font pango:Hack Nerd Font Mono 20
-exec --no-startup-id sh $DOTFILES/scripts/monitor/default.sh
+exec --no-startup-id sh $DOTFILES/scripts/monitor_default.sh
 exec --no-startup-id sh $DOTFILES/scripts/feh.sh
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
-exec --no-startup-id redshift
 exec --no-startup-id udiskie &
-exec --no-startup-id picom &
 exec --no-startup-id blueman-applet
 
 exec --no-startup-id alacritty
@@ -66,12 +64,12 @@ bindsym $mod+shift+f exec $DOTFILES/rofi/rofi-add-note.sh
 bindsym $mod+o exec $DOTFILES/rofi/rofi-open-note.sh
 bindsym $mod+shift+p exec $DOTFILES/rofi/rofi-paste-clipboard.sh
 
-bindsym XF86AudioRaiseVolume exec $DOTFILES/scripts/control/change_volume.sh up
-bindsym XF86AudioLowerVolume exec $DOTFILES/scripts/control/change_volume.sh down
-bindsym XF86AudioMute exec $DOTFILES/scripts/control/change_volume.sh mute
+bindsym XF86AudioRaiseVolume exec $DOTFILES/scripts/change_volume.sh up
+bindsym XF86AudioLowerVolume exec $DOTFILES/scripts/change_volume.sh down
+bindsym XF86AudioMute exec $DOTFILES/scripts/change_volume.sh mute
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86MonBrightnessUp exec $DOTFILES/scripts/control/change_brightness.sh up
-bindsym XF86MonBrightnessDown exec $DOTFILES/scripts/control/change_brightness.sh down
+bindsym XF86MonBrightnessUp exec $DOTFILES/scripts/change_brightness.sh up
+bindsym XF86MonBrightnessDown exec $DOTFILES/scripts/change_brightness.sh down
  
 set $ws1 "1"
 set $ws2 "2"
