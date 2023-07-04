@@ -2,23 +2,22 @@ set $mod Mod4
 
 font pango:Hack Nerd Font Mono 20
 exec --no-startup-id sh $DOTFILES/scripts/monitor_default.sh
-exec --no-startup-id sh $DOTFILES/scripts/feh.sh
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
 exec --no-startup-id udiskie &
 exec --no-startup-id blueman-applet
 
-exec --no-startup-id alacritty
-exec --no-startup-id firefox
-exec --no-startup-id phpstorm
-exec --no-startup-id tableplus
-exec --no-startup-id postman
-exec --no-startup-id anki
-exec --no-startup-id obsidian
-exec --no-startup-id notion-app
-exec --no-startup-id discord
-exec --no-startup-id slack
+#exec --no-startup-id alacritty
+#exec --no-startup-id firefox
+#exec --no-startup-id phpstorm
+#exec --no-startup-id tableplus
+#exec --no-startup-id postman
+#exec --no-startup-id anki
+#exec --no-startup-id obsidian
+#exec --no-startup-id notion-app
+#exec --no-startup-id discord
+#exec --no-startup-id slack
 
 bindsym $mod+Ctrl+h move workspace to output left
 bindsym $mod+Ctrl+l move workspace to output right
