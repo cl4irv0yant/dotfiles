@@ -14,9 +14,9 @@ docker-nuke() {
 rebase() {
   current_branch=$(git symbolic-ref --short HEAD)
 
-  if [[ $current_branch == *"feature/"* ]] || [[ $current_branch == *"chore/"* ]]; then
+  if [[ $current_branch == *"bug/"* ]] || [[ $current_branch == *"feature/"* ]] || [[ $current_branch == *"chore/"* ]]; then
     target_branch="develop"
-  elif [[ $current_branch == *"bug/"* ]] || [[ $current_branch == *"hotfix/"* ]]; then
+  elif [[ $current_branch == *"hotfix/"* ]]; then
     target_branch="master"
 
   else
