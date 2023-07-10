@@ -38,6 +38,13 @@ ln -s "$DOTFILES/gtk-3.0" "$XDG_CONFIG_HOME"
 rm -rf "$HOME/.gtkrc-2.0"
 ln -s "$DOTFULES/gtk-2.0/.gtkrc-2.0" $HOME
 
+###############
+# taskwarrior #
+###############
+
+rm -rf "$HOME/.taskrc"
+ln -s "$DOTFILES/taskwarrior/.taskrc" "$HOME"
+
 #######
 # Git #
 #######
