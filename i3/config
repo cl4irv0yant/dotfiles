@@ -55,13 +55,14 @@ bindsym $mod+shift+n exec killall -SIGUSR2 dunst
 # Rofi
 bindsym $mod+z exec $DOTFILES/rofi/rofi-zathura.sh
 bindsym $mod+d exec $DOTFILES/rofi/rofi-application-menu.sh
-bindsym $mod+a exec $DOTFILES/rofi/rofi-monitor-menu.sh
+bindsym $mod+m exec $DOTFILES/rofi/rofi-monitor-menu.sh
 bindsym $mod+BackSpace exec $DOTFILES/rofi/rofi-power-menu.sh
 bindsym $mod+t exec $DOTFILES/rofi/rofi-add-task.sh
 bindsym $mod+shift+t exec $DOTFILES/rofi/rofi-view-tasks.sh
 bindsym $mod+shift+f exec $DOTFILES/rofi/rofi-add-note.sh
 bindsym $mod+o exec $DOTFILES/rofi/rofi-open-note.sh
 bindsym $mod+shift+p exec $DOTFILES/rofi/rofi-paste-clipboard.sh
+bindsym $mod+a exec $DOTFILES/rofi/rofi-add-to-backlog.sh
 
 bindsym XF86AudioRaiseVolume exec $DOTFILES/scripts/change_volume.sh up
 bindsym XF86AudioLowerVolume exec $DOTFILES/scripts/change_volume.sh down

@@ -12,7 +12,7 @@ export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
-export BROWSER="firefox"
+export BROWSER=/usr/bin/firefox
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
@@ -30,7 +30,6 @@ export NOTES_HOME="$HOME/src/notes"
 # fzf and ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
