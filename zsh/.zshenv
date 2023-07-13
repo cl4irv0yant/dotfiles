@@ -25,6 +25,7 @@ export SAVEHIST=10000
 
 export DOTFILES="$HOME/src/dotfiles"
 export INSTALLER="$HOME/src/arch_install"
+export NOTES_HOME="$HOME/src/notes"
 
 # fzf and ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
@@ -34,3 +35,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 
+export NEWSBOAT_URLS_FILE="$NOTES_HOME/newsboat_urls"
