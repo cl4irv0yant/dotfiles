@@ -14,6 +14,13 @@ ln -sf "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 rm -rf "$XDG_CONFIG_HOME/alacritty/"
 ln -sf "$DOTFILES/alacritty" "$XDG_CONFIG_HOME"
 
+############
+# Newsboat #
+############
+
+rm -rf "$HOME/.newsboat/urls"
+ln -s "$NOTES_HOME/urls" "$HOME/.newsboat/urls"
+
 ###########
 # Zathura #
 ###########
@@ -29,7 +36,7 @@ rm -rf "$XDG_CONFIG_HOME/picom"
 ln -s "$DOTFILES/picom" "$XDG_CONFIG_HOME"
 
 #######
-# GTK #
+# GTK # 
 #######
 
 rm -rf "$XDG_CONFIG_HOME/gtk-3.0"
