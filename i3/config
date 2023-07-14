@@ -63,6 +63,7 @@ bindsym $mod+shift+f exec $DOTFILES/rofi/rofi-add-note.sh
 bindsym $mod+o exec $DOTFILES/rofi/rofi-open-note.sh
 bindsym $mod+shift+p exec $DOTFILES/rofi/rofi-paste-clipboard.sh
 bindsym $mod+a exec $DOTFILES/rofi/rofi-add-to-backlog.sh
+bindsym $mod+v exec $DOTFILES/rofi/rofi_vpn.sh
 
 bindsym XF86AudioRaiseVolume exec $DOTFILES/scripts/change_volume.sh up
 bindsym XF86AudioLowerVolume exec $DOTFILES/scripts/change_volume.sh down
@@ -117,6 +118,7 @@ for_window [class="Bitwarden"] floating enable
 for_window [class="Blueberry.py"] floating enable
 for_window [class="pritunl"] floating enable
 for_window [class="1Password"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 assign [class="Alacritty"] 1
 assign [class="firefox" instance="Navigator"] 2
