@@ -4,10 +4,6 @@ set -euo pipefail
 
 mkdir -p "$XDG_CONFIG_HOME"
 
-# x11
-#rm -rf "$XDG_CONFIG_HOME"/X11
-#ln -s "$DOTFILES"/X11 "$XDG_CONFIG_HOME/"
-
 # zsh
 
 ln -sf "$DOTFILES"/zsh/zshenv "$HOME"/.zshenv
@@ -50,16 +46,6 @@ ln -s "$DOTFILES"/gtk-2.0 "$XDG_CONFIG_HOME"
 rm -rf "$XDG_CONFIG_HOME"/git
 ln -s "$DOTFILES"/git "$XDG_CONFIG_HOME"
 
-# redshift
-
-rm -rf "$XDG_CONFIG_HOME"/redshift
-ln -s "$DOTFILES"/redshift "$XDG_CONFIG_HOME"
-
-# phpstorm
-
-rm -rf "$XDG_CONFIG_HOME"/ideavim
-ln -s "$DOTFILES"/jetbrains/ideavim "$XDG_CONFIG_HOME"
-
 # nvim
 
 rm -rf "$XDG_CONFIG_HOME"/nvim
@@ -69,10 +55,6 @@ ln -s "$DOTFILES"/nvim "$XDG_CONFIG_HOME"
 
 rm -rf "$XDG_CONFIG_HOME"/hypr
 ln -s "$DOTFILES"/hypr "$XDG_CONFIG_HOME"
-
-# mako
-rm -rf "$XDG_CONFIG_HOME"/mako
-ln -s "$DOTFILES"/mako "$XDG_CONFIG_HOME"
 
 # waybar
 
@@ -97,15 +79,12 @@ ln -s "$DOTFILES"/lf "$XDG_CONFIG_HOME"
 # applications
 
 rm -rf "$XDG_DATA_HOME"/applications
-ln -sf "$DOTFILES"/applications "$XDG_DATA_HOME"
+mkdir "$XDG_DATA_HOME"/applications
+cp -r "$DOTFILES/applications/"* "$XDG_DATA_HOME/applications/"
 
 # mimeapps
 
 ln -sf "$DOTFILES"/mimeapps/mimeapps.list "$XDG_CONFIG_HOME"/mimeapps.list
-
-# xdg-user-dirs
-
-ln -sf "$DOTFILES"/xdg-user-dirs/user-dirs.dirs "$XDG_CONFIG_HOME"/user-dirs.dirs
 
 # mycli
 
