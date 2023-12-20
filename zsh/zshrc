@@ -83,6 +83,7 @@ for km in viopp visual; do
 done
 
 if [ "$(tty)" = "/dev/tty1" ] && [ "$(tty)" = "/dev/tty1" ]; then
+  export $DOTFILES=$DOTFILES
 	exec Hyprland
 fi
 ftmuxp

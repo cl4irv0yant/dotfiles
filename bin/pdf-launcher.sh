@@ -1,0 +1,7 @@
+#!/bin/bash
+
+search_dir="$HOME/sync"
+
+selected_pdf=$(fd -e pdf "" "$search_dir" | wofi --show dmenu --prompt="Select PDF")
+
+[ -n "$selected_pdf" ] && zathura "$selected_pdf" &
