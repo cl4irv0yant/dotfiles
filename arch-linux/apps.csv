@@ -51,6 +51,9 @@ sound-system,alsa-utils,advanced linux sound architecture - utilities
 sound-system,pipewire,low level multimedia framework
 sound-system,pipewire-alsa,low-latency audio/video router and processor - alsa configuration
 sound-system,pipewire-audio,audio processor and router
+sound-system,wireplumber,session manager and policy engine for pipewire
 system-services,syncthing,open source continuous replication / cluster synchronization thing
 system-services,udiskie,automount devices
 tools,bleachbit,Deletes unneeded files to free disk space and maintain privacy
+tools,tranmission-cli,lightweight bittorrent client
+tools,mpv,media player

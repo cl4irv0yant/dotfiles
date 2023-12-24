@@ -84,10 +84,6 @@ cp -r "$DOTFILES/applications/"* "$XDG_DATA_HOME/applications/"
 
 ln -sf "$DOTFILES"/mimeapps/mimeapps.list "$XDG_CONFIG_HOME"/mimeapps.list
 
-# xdg-user-dirs
-
-ln -sf "$DOTFILES"/xdg-user-dirs/user-dirs.dirs "$XDG_CONFIG_HOME"/user-dirs.dirs
-
 # mycli
 
 ln -sf "$DOTFILES"/mycli/myclirc "$XDG_CONFIG_HOME"/myclirc
