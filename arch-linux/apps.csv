@@ -1,49 +1,67 @@
-appearance,ttf-hack-nerd,hack nerd font
+backup,syncthing,open source continuous replication / cluster synchronization thing
 bluetooth,bluez,bluetooth protocol stack
 bluetooth,bluez-utils,bluetoothctl utility
-development-tools,docker,run containers
-development-tools,docker-compose,run containers
-development-tools,git,version control system
-development-tools,github-cli,the github cli
-development-tools,kubectl,k8s cli
-development-tools,mycli,mysql cli
-development-tools,neovim,editor
-development-tools,pgcli,postgres cli
+control,brightnessctl,control backlight
+control,playerctl,control media
+control,udiskie,automount devices
+docker,dive,docker image explorer
+docker,docker,run containers
+docker,docker-compose,run containers
 docs,man-db,manual
 docs,man-pages,manual pages
 docs,texinfo,gnu documentation system
 docs,tldr,examples for clis
-gui,brightnessctl,control backlight
-gui,dunst,notification system
+editor,neovim,editor
+fonts,noto-fonts-emoji,emoji font
+fonts,otf-font-awesome,font awesome
+fonts,ttf-hack-nerd,hack nerd font
 gui,firefox,firefox
-gui,libnotify,notifier
-gui,nvidia,nvidia drivers
-gui,wayland,display server
-gui,wl-clipboard,clipboard manager
 gui,hyprland,hyprland compositor
 gui,hyprpaper,hyprland wallpaper manager
-gui,waybar,waybar status bar
-gui,wofi,run menu
+gui,nvidia,nvidia drivers
 gui,swaylock,lock screen
+gui,thunderbird,thunderbird
+gui,waybar,waybar status bar
+gui,wayland,display server
+gui,wl-clipboard,clipboard manager
+gui,wofi,run menu
+kubernetes,kubectl,k8s cli
+multimedia,lltag,tag mp3 files
+multimedia,mpd,music player daemon
+multimedia,mpv,media player
+multimedia,ncmpcpp,ncurses mpd client
 multimedia,nsxiv,image viewer
-multimedia,playerctl,control media
+multimedia,pulsemixer,a cli mixer for pulseaudio
+mysql,mycli,mysql cli
 networking,curl,data transfer lib and cli
-networking,hurl,API client
+networking,hurl-bin,API client
 networking,openssh,remote login tool for ssh protocol
+networking,sshfs,filesystem client based on sshfs
 networking,tailscale,a mesh vpn that makes it easy to connect your devices wherever they are.
+networking,wget,download files
+notifications,dunst,notification system
+notifications,libnotify,notifier
+postgres,pgcli,postgres cli
 second-brain,calcurse,tui calendar
 second-brain,neomutt,cli mail client
 second-brain,newsboat,rss feed reader
 second-brain,obsidian,knowledge base
 second-brain,zathura-pdf-mupdf,pdf reader
 security,bitwarden-cli,bitwarden cli
+security,gpg,gpg
 shell,alacritty,a cross-platform gpu-accelerated terminal emulator
+shell,bleachbit-cli,Deletes unneeded files to free disk space and maintain privacy
 shell,fd,faster alternative to find
 shell,fzf,command line fuzzy finder
+shell,git,version control system
 shell,lf,file browser
+shell,lynx,terminal web browser
+shell,moreutils,unix tools including vidir
 shell,ripgrep-all,faster alternative to grep
 shell,tmux,terminal multiplexer
 shell,tmuxp,configure tmux session + windows + panes via config files
+shell,urlscan,open urls in terminal
+shell,urlview,open urls in terminal
 shell,zsh,unix shell (z-shell)
 shell,zsh-autosuggestions,fish-like autosuggestions for zsh
 shell,zsh-syntax-highlighting,fish shell like syntax highlighting for zsh
@@ -52,8 +70,5 @@ sound-system,pipewire,low level multimedia framework
 sound-system,pipewire-alsa,low-latency audio/video router and processor - alsa configuration
 sound-system,pipewire-audio,audio processor and router
 sound-system,wireplumber,session manager and policy engine for pipewire
-system-services,syncthing,open source continuous replication / cluster synchronization thing
-system-services,udiskie,automount devices
-tools,bleachbit,Deletes unneeded files to free disk space and maintain privacy
-tools,tranmission-cli,lightweight bittorrent client
-tools,mpv,media player
+torrents,stig,cli torrent client
+torrents,tranmission-cli,lightweight bittorrent client

@@ -40,18 +40,16 @@ process_aur_queue() {
   install_aur_queue
 }
 
-set-keymap() {
+set_keymap() {
   sudo localectl set-x11-keymap se
 }
 
 install_dotfiles() {
-  rm -rf /tmp/dotfiles
-  git clone https://github.com/cl4irv0yant/dotfiles.git /tmp/dotfiles
+  rm -rf $HOME/src
+  mkdir -p $HOME/src
+  git clone https://github.com/cl4irv0yant/dotfiles.git > $HOME/src/dotfiles
 
-  source "/tmp/dotfiles/zsh/zshenv"
-  rm -rf "$DOTFILES"
-  mkdir -p "$DOTFILES"
-  mv -f /tmp/dotfiles/* "$DOTFILES"
+  source $HOME/src/zsh/zshenv
   bash $DOTFILES/bootstrap.sh
 }
 
@@ -71,13 +69,11 @@ install_tailscale() {
   sudo systemctl start tailscaled
 }
 
-install_cron() {
-  sudo systemctl enable cronie.service
-  sudo systemctl start cronie.service
-}
-
 install_python() {
   curl https://pyenv.run | bash
+
+  source $DOTFILES/zsh/zshenv
+  source $DOTFILES/zsh/zshrc
   
   pyenv install 3.11
   pyenv global 3.11
@@ -94,6 +90,11 @@ main() {
   set_keymap
   install_python
   process_aur_queue
+  install_bluetooth
+  instaoo_python
+  install_docker
+  install_tailscale
+  install_node
 }
 
 main

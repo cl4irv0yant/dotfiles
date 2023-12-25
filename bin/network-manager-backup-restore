@@ -1,5 +1,0 @@
-sudo tar -czvf ~/networkmanager_backup.tar.gz /etc/NetworkManager/system-connections/
-sudo tar -xzvf ~/networkmanager_backup.tar.gz -C /
-sudo systemctl restart NetworkManager
-sudo chown root:root /etc/NetworkManager/system-connections/*
-sudo chmod 600 /etc/NetworkManager/system-connections/*

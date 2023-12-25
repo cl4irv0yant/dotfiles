@@ -1,2 +1,0 @@
-
-pacman -Qqe > pacman_package_list.txt

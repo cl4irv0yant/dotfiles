@@ -5,7 +5,7 @@ set -euo pipefail
 mkdir -p "$XDG_CONFIG_HOME"
 
 # zsh
-
+mkdir -p "$ZDOTDIR"
 ln -sf "$DOTFILES"/zsh/zshenv "$HOME"/.zshenv
 ln -sf "$DOTFILES"/zsh/zshrc "$ZDOTDIR"/.zshrc
 ln -sf "$DOTFILES"/zsh/aliases "$ZDOTDIR"/aliases
@@ -77,6 +77,9 @@ ln -s "$DOTFILES"/lf "$XDG_CONFIG_HOME"
 
 # applications
 
+
+rm -rf "$XDG_DATA_HOME"/applications
+mkdir -p "$XDG_DATA_HOME"/applications
 mkdir -p "$XDG_DATA_HOME"/applications
 cp -r "$DOTFILES/applications/"* "$XDG_DATA_HOME/applications/"
 
@@ -87,6 +90,17 @@ ln -sf "$DOTFILES"/mimeapps/mimeapps.list "$XDG_CONFIG_HOME"/mimeapps.list
 # mycli
 
 ln -sf "$DOTFILES"/mycli/myclirc "$XDG_CONFIG_HOME"/myclirc
+
+# transmission
+
+mkdir -p "$XDG_CONFIG_HOME"/transmission-daemon
+rm -rf "$XDG_CONFIG_HOME"/transmission-daemon/settings.json
+ln -sf "$DOTFILES"/transmission/settings.json "$XDG_CONFIG_HOME"/transmission-daemon/settings.json
+
+# newsboat
+
+rm -rf "$XDG_CONFIG_HOME"/newsboat
+ln -sf "$DOTFILES"/newsboat "$XDG_CONFIG_HOME"
 
 # tmux
 

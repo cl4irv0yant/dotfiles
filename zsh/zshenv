@@ -36,11 +36,7 @@ fi
 
 # Pyenv configuration
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-if [ -d "$PYENV_ROOT/bin" ]; then
-    export PATH="$PYENV_ROOT/bin:$PATH"
-else
-    echo "Pyenv does not seem to be installed in $PYENV_ROOT, please check your pyenv installation."
-fi
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # PATH updates
 if [ -d "$XDG_CONFIG_HOME/bin" ]; then

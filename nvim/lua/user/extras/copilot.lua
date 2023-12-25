@@ -11,9 +11,7 @@ function M.config()
   require("copilot").setup {
     panel = {
       keymap = {
-        jump_next = "<c-j>",
-        jump_prev = "<c-k>",
-        accept = "<c-l>",
+        accept = "<c-y>",
         refresh = "r",
         open = "<M-CR>",
       },

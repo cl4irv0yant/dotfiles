@@ -2,8 +2,8 @@
 set -euo pipefail
 set -x
 
-USERNAME="user"
-PASSWORD="pass"
+USERNAME=""
+PASSWORD=""
 PASSWORD_CONFIRM=""
 
 INSTALLER_URL="https://raw.githubusercontent.com/cl4irv0yant/dotfiles/master/arch-linux"
@@ -61,7 +61,7 @@ user_and_groups() {
 }
 
 change_shell() {
-  chsh -s /bin/bash "$USERNAME"
+  chsh -s /bin/zsh "$USERNAME"
 }
 
 user() {

@@ -29,6 +29,7 @@ spec "user.netrw"
 spec "user.project"
 spec "user.toggleterm"
 spec "user.bufdelete"
+spec "user.tmuxnavigator"
 spec "user.dap"
 -- Extras
 spec "user.extras.colorizer"
