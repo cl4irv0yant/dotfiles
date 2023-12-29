@@ -1,6 +1,8 @@
 [user]
 	email = 
 	name = 
+	email = =
+	name = =
 [alias]
   glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
 [core]
