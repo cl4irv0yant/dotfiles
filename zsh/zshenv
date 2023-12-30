@@ -6,7 +6,7 @@ export I3_DIR="$DOTFILES/i3"
 export ROFI_DIR="$DOTFILES/rofi"
 
 export NOTES="$HOME/notes"
-export SYNC="$HOME/sync"
+export SYNC="$HOME/sync/sync"
 
 # XDG Base Directory Specification
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -34,16 +34,14 @@ else
     echo "Firefox is not installed. Please set the BROWSER variable manually."
 fi
 
-# Pyenv configuration
+# Path settings
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-# PATH updates
 if [ -d "$XDG_CONFIG_HOME/bin" ]; then
     export PATH="$XDG_CONFIG_HOME/bin:$PATH"
 fi
 
-# PATH updates
 if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
@@ -54,25 +52,6 @@ export PATH="$DOTFILES/bin/:$PATH"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# Startx configuration
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-
-## Set scale_factor
-#resolution=$(xrandr --current | grep primary | awk '{print $4}' | cut -d'+' -f1)
-#
-#width=$(echo $resolution | cut -d'x' -f1)
-#height=$(echo $resolution | cut -d'x' -f2)
-#
-#hidpi_width_threshold=1920
-#hidpi_height_threshold=1080
-#
-#scale_factor="1"
-#if [ "$width" -gt "$hidpi_width_threshold" ] || [ "$height" -gt "$hidpi_height_threshold" ]; then
-#    scale_factor=$(echo "$width/$hidpi_width_threshold" | bc -l | xargs printf "%.0f\n")
-#fi
-#
-#export QT_SCALE_FACTOR=$scale_factor
-#export GDK_SCALE=$scale_factor
 
 export QT_SCALE_FACTOR=2
 export GDK_SCALE=2

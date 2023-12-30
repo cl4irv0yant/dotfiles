@@ -30,6 +30,9 @@ log_and_set_permissions "$BACKUP_DIR/ssh-keys" "600" "700"
 # Firefox Data
 cp -r $HOME/.mozilla/firefox "$BACKUP_DIR/firefox-data"
 
+# JetBrains Data
+cp -r $XDG_DATA_HOME/JetBrains "$BACKUP_DIR/jetbrains-data"
+
 # Thunderbird Data
 cp -r $HOME/.thunderbird "$BACKUP_DIR/thunderbird-data"
 

@@ -45,6 +45,7 @@ function M.config()
       section_separators = { left = "", right = "" },
 
       ignore_focus = { "NvimTree" },
+      theme = "tokyonight",
     },
     sections = {
       -- lualine_a = { {"branch", icon =""} },

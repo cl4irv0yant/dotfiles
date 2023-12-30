@@ -25,6 +25,12 @@ gui,waybar,waybar status bar
 gui,wayland,display server
 gui,wl-clipboard,clipboard manager
 gui,wofi,run menu
+gui,polkit-kde-agent,polkit agent
+gui,qt5-wayland,qt5 wayland
+gui,qt6-wayland,qt56 wayland
+gui,xdg-desktop-portal-hyperland,xdg desktop portal
+gui,sddm,sddm
+gui,fuse,filesystem in userspace
 kubernetes,kubectl,k8s cli
 multimedia,lltag,tag mp3 files
 multimedia,mpd,music player daemon

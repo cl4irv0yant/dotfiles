@@ -13,6 +13,7 @@ TODO: sudo systemctl enable mpd.servie && sudo systemctl start mpd.service
 TODO: sudo systemctl enable docker.service && sudo systemctl start docker.service
 TODO: zfs mount, import and symlink
 TODO: git remote set-url origin git@github.com:cl4irv0yant/dotfiles.git  
+TODO: sudo systemctl enable sshd.service && sudo systemctl start sshd.service
 
 
 Interesting idea:

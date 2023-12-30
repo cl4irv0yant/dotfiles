@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Obsidian
+Exec=$HOME/Obsidian-1.5.3.AppImage %U
+Type=Application
