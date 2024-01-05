@@ -36,7 +36,6 @@ r() {
 
   else
     echo "Error: Unsupported branch type. Branch name must include 'feature/', 'bug/', 'chore/', or 'hotfix/'"
-    exit 1
   fi
 
   echo "Rebasing $current_branch to $target_branch..."
@@ -45,6 +44,5 @@ r() {
   git pull origin $target_branch --rebase
   git checkout $current_branch
   git rebase $target_branch
-
   echo "Rebase complete."
 }
