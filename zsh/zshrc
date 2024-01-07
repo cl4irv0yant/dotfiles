@@ -41,9 +41,8 @@ source $ZDOTDIR/external/bd.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source $ZDOTDIR/scripts/generic.sh
 source $ZDOTDIR/scripts/fzf.sh
-source $ZDOTDIR/scripts/project.sh
+source $ZDOTDIR/scripts/functions.zsh
 source $ZDOTDIR/aliases
 
 # zsh line editor
