@@ -1,10 +1,10 @@
 [user]
-	email = 
+	email = 
 	name = 
 	email = =
 	name = =
 [alias]
-  glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+  	glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = gitignore_global

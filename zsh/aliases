@@ -3,6 +3,7 @@
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+alias glog='git glog'
 
 alias visudo="sudo EDITOR=nvim visudo"
 alias gcheat="curl cheat.sh/git"
