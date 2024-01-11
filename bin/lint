@@ -1,0 +1,3 @@
+cd $HOME/src/sweetspot-api-platform 
+docker exec -it sweetspot-api-php bash -c "./vendor/bin/phpstan analyse src -c phpstan.ci.neon.dist"
+docker exec -it sweetspot-api-php bash -c "./vendor/bin/phparkitect check"
