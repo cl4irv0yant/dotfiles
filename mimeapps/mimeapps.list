@@ -18,3 +18,4 @@ x-scheme-handler/lbry=lbry.desktop
 x-scheme-handler/magnet=torrent.desktop;
 x-scheme-handler/mailto=mail.desktop;
 x-scheme-handler/obsidian=obsidian.desktop
+x-scheme-handler/postman=Postman.desktop
