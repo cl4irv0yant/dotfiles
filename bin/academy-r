@@ -1,0 +1,11 @@
+current_branch=$(git symbolic-ref --short HEAD)
+
+saved_branch="$current_branch"
+
+git checkout academy-develop 
+git pull origin --rebase
+
+git checkout "$saved_branch"
+
+git rebase academy-develop
+

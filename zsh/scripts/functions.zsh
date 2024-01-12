@@ -36,8 +36,17 @@ docker-nuke() {
   docker network rm $(docker network ls -q)
 }
 
+ss-code-nuke() {
+  docker-nuke
+  sudo rm -rf docker/mysql/data
+  sudo rm -rf var
+  sudo rm -rf vendor
+  make build
+  make uph && make composer && make refresh-db
+}
 
-update() {
+
+ss-update() {
   base_dir=$HOME/src
   folders=("front-end-mono" "sweetspot-api" "sweetspot-api-platform")
 
@@ -61,15 +70,6 @@ update() {
   done
 }
 
-code-nuke() {
-  docker-nuke
-  sudo rm -rf docker/mysql/data
-  sudo rm -rf var
-  sudo rm -rf vendor
-  make build
-  make uph && make composer && make refresh-db
-}
-
 paste-from-clipboard() {
   LBUFFER+=$(xclip -o -selection clipboard)
 }
@@ -83,7 +83,7 @@ vman() {
 }
 
 uuid() {
-  uuidgen | xsel -ib
+  uuidgen | wl-copy
 }
 
 g() {
