@@ -28,7 +28,7 @@ gui,wofi,run menu
 gui,polkit-kde-agent,polkit agent
 gui,qt5-wayland,qt5 wayland
 gui,qt6-wayland,qt56 wayland
-gui,xdg-desktop-portal-hyperland,xdg desktop portal
+gui,xdg-desktop-portal-hyperland-git,xdg desktop portal
 gui,sddm,sddm
 gui,fuse,filesystem in userspace
 kubernetes,kubectl,k8s cli
