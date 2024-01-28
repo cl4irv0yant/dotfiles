@@ -6,8 +6,8 @@
     "spacing": 30, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": [""],
-    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["battery", "battery#bat2", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,

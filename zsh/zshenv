@@ -1,11 +1,11 @@
 # Personal directories
-export DOTFILES="$HOME/src/dotfiles"
+export DOTFILES="$HOME/sync/sync/src/dotfiles"
 
 export POLYBAR_DIR="$DOTFILES/polybar"
 export I3_DIR="$DOTFILES/i3"
 export ROFI_DIR="$DOTFILES/rofi"
 
-export NOTES="$HOME/notes"
+export NOTES="$HOME/sync/notes"
 export SYNC="$HOME/sync/sync"
 
 # XDG Base Directory Specification

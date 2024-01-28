@@ -1,2 +1,2 @@
-exec $HOME/Obsidian-1.5.3.AppImage
+exec $HOME/.local/bin/Obsidian-1.5.3.AppImage
 
