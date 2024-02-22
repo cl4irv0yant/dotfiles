@@ -40,6 +40,7 @@ multimedia,nsxiv,image viewer
 multimedia,pulsemixer,a cli mixer for pulseaudio
 mysql,mycli,mysql cli
 networking,curl,data transfer lib and cli
+networking,net-tools,arp
 networking,hurl-bin,API client
 networking,openssh,remote login tool for ssh protocol
 networking,sshfs,filesystem client based on sshfs

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Define the path to your inbox file
+INBOX_DIR="$NOTES/Inbox"
+
+# Ensure the inbox directory exists
+mkdir -p "$INBOX_DIR"
+
+# Use Wofi to input the task
+TASK=$(echo | wofi --dmenu --prompt="Add to Inbox")
+
+# Check if the task is not empty
+if [ -n "$TASK" ]; then
+	# Format the current date and time
+	TIMESTAMP=$(date '+%Y-%m-%d_%H-%M-%S')
+	# Create a unique filename for the task
+	FILENAME="$INBOX_DIR/$TIMESTAMP.md"
+	# Save the task to the file
+	echo "$TASK" >"$FILENAME"
+	echo "Task added to inbox."
+else
+	echo "No task entered."
+fi
