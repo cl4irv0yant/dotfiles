@@ -1,1 +1,1 @@
-vim.o.swapfile = false
+vim.opt.swapfile = false
