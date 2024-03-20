@@ -84,9 +84,8 @@ done
 if [ "$(tty)" = "/dev/tty1" ] && [ "$(tty)" = "/dev/tty1" ]; then
 	exec Hyprland
 fi
+
 ftmuxp
-
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

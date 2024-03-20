@@ -1,0 +1,193 @@
+/* =============================================================================
+ *
+ * Waybar configuration with Tokyo Night Dark Color Scheme
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+  70% {
+    color: #c0caf5;
+  }
+
+  to {
+    color: #c0caf5;
+    background-color: #e0af68;
+  }
+}
+
+@keyframes blink-critical {
+  70% {
+    color: #c0caf5;
+  }
+
+  to {
+    color: #c0caf5;
+    background-color: #f7768e;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+  background: #1a1b26;
+  color: #c0caf5;
+  font-family:
+    Cantarell,
+    Noto Sans,
+    sans-serif;
+  font-size: 13px;
+}
+
+/* Each module */
+#battery,
+#clock,
+#cpu,
+#custom-keyboard-layout,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#tray {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#battery {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.warning {
+  color: #e0af68;
+}
+
+#battery.critical {
+  color: #f7768e;
+}
+
+#battery.warning.discharging {
+  animation-name: blink-warning;
+  animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+  animation-name: blink-critical;
+  animation-duration: 2s;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+#cpu {
+  /* No styles */
+}
+
+#cpu.warning {
+  color: #e0af68;
+}
+
+#cpu.critical {
+  color: #f7768e;
+}
+
+#memory {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#memory.warning {
+  color: #e0af68;
+}
+
+#memory.critical {
+  color: #f7768e;
+  animation-name: blink-critical;
+  animation-duration: 2s;
+}
+
+#mode {
+  background: #414868;
+  border-top: 2px solid #c0caf5;
+  padding-bottom: 2px;
+}
+
+#network {
+  /* No styles */
+}
+
+#network.disconnected {
+  color: #e0af68;
+}
+
+#pulseaudio {
+  /* No styles */
+}
+
+#pulseaudio.muted {
+  /* No styles */
+}
+
+#custom-spotify {
+  color: #9ece6a;
+}
+
+#temperature {
+  /* No styles */
+}
+
+#temperature.critical {
+  color: #f7768e;
+}
+
+#tray {
+  /* No styles */
+}
+
+#window {
+  font-weight: bold;
+}
+
+#workspaces button {
+  border-top: 2px solid transparent;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #565f89;
+}
+
+#workspaces button.focused {
+  border-color: #7aa2f7;
+  color: #c0caf5;
+  background-color: #3b4261;
+}
+
+#workspaces button.urgent {
+  border-color: #db4b4b;
+  color: #db4b4b;
+}

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+WATCHED_DIR=~/sync/sync/src/sweetspot-api-platform
+
+find $WATCHED_DIR -name '*.php' | entr -c docker exec sweetspot-api-php vendor/bin/phpunit src/Sweetspot/Range/tests --colors=always
