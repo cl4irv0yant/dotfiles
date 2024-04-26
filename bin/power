@@ -7,6 +7,6 @@ chosen=$(echo -e $options | wofi --show dmenu -i)
 case $chosen in
     Shutdown) systemctl poweroff;;
     Reboot) systemctl reboot;;
-    Log Out) pkill -KILL -u $USER;;
+    Log Out) pkill -KILL -u $USER
 esac
 

@@ -1,8 +1,32 @@
 #!/bin/bash
 
-search_dir="$HOME/sync/sync"
+search_dir="$SYNC/Calibre Library/"
+pdf_viewer="zathura"
+epub_viewer="zathura"
+log_file="$HOME/pdf_epub_launcher.log"
 
-selected_pdf=$(fd -e pdf "" "$search_dir" | wofi -i --show dmenu --prompt="Select PDF")
+selected_file=$(fd -e pdf -e epub "" "$search_dir" | wofi -i --show dmenu --prompt="Select PDF/EPUB")
 
-[ -n "$selected_pdf" ] && zathura "$selected_pdf" &
-
+if [ -n "$selected_file" ]; then
+    case "${selected_file##*.}" in
+        pdf)
+            viewer="$pdf_viewer"
+            ;;
+        epub)
+            viewer="$epub_viewer"
+            ;;
+        *)
+            echo "Unsupported file type." >> "$log_file"
+            exit 1
+            ;;
+    esac
+    
+    if "$viewer" "$selected_file" & then
+        echo "$(date): Opened $selected_file" >> "$log_file"
+    else
+        echo "$(date): Failed to open $selected_file" >> "$log_file"
+    fi
+else
+    echo "No file selected."
+fi
+i

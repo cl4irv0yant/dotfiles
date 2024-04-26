@@ -1,2 +1,0 @@
-cd $HOME/src/sweetspot-api-platform 
-docker exec -it sweetspot-api-php bash -c "./vendor/bin/phpunit"
