@@ -2,13 +2,13 @@
 set -euo pipefail
 set -x
 
-INSTALLER_URL="https://raw.githubusercontent.com/cl4irv0yant/dotfiles/master/arch-linux"
+INSTALLER_URL="https://raw.githubusercontent.com/cl4irv0yant/dotfiles/master/scripts/OSarch-linux"
 
 HOSTNAME="arch"
 ROOT_PASSWORD="pass"
 ENCRYPTION_PASSWORD="pass"
-SWAP_SIZE=8
-HARD_DRIVE="/dev/sda"
+SWAP_SIZE=8192
+HARD_DRIVE="/dev/nvme0n1"
 
 BOOT_PARTITION=1
 SWAP_PARTITION=2
