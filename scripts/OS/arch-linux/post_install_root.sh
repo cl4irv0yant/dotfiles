@@ -6,7 +6,7 @@ USERNAME=""
 PASSWORD=""
 PASSWORD_CONFIRM=""
 
-INSTALLER_URL="https://raw.githubusercontent.com/cl4irv0yant/dotfiles/master/arch-linux"
+INSTALLER_URL="https://raw.githubusercontent.com/cl4irv0yant/dotfiles/master/scripts/OS/arch-linux"
 SUDOERS="%wheel ALL=(ALL) NOPASSWD: ALL"
 
 USER_SCRIPT="post_install_user.sh"
