@@ -45,12 +45,14 @@ set_keymap() {
 }
 
 install_dotfiles() {
+  echo $HOME
   rm -rf $HOME/src
-  mkdir -p $HOME/src
-  git clone https://github.com/cl4irv0yant/dotfiles.git > $HOME/src/dotfiles
+  mkdir -p $HOME/sync/sync/src
+  cd $HOME/sync/sync/src
+  git clone https://github.com/cl4irv0yant/dotfiles.git
 
-  source $HOME/src/zsh/zshenv
-  bash $DOTFILES/bootstrap.sh
+  source $HOME/sync/sync/src/dotfiles/config/zsh/.zshenv
+  sh $DOTFILES/scripts/bootstrap.sh
 }
 
 install_bluetooth() {
@@ -72,8 +74,8 @@ install_tailscale() {
 install_python() {
   curl https://pyenv.run | bash
 
-  source $DOTFILES/zsh/zshenv
-  source $DOTFILES/zsh/zshrc
+  source $DOTFILES/config/zsh/.zshenv
+  source $DOTFILES/config/zsh/.zshrc
   
   pyenv install 3.11
   pyenv global 3.11
