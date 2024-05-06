@@ -85,7 +85,7 @@ select_mirrors() {
 }
 
 install_essential_packages() {
-	pacstrap -K /mnt base base-devel linux linux-firmware networkmanager iwd neovim git
+	pacstrap -K /mnt base base-devel linux linux-firmware networkmanager neovim git
 }
 
 fstab() {
