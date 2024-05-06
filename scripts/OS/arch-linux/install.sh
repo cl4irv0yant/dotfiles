@@ -2,7 +2,7 @@
 set -euo pipefail
 set -x
 
-INSTALLER_URL="https://raw.githubusercontent.com/cl4irv0yant/dotfiles/master/scripts/OSarch-linux"
+INSTALLER_URL="https://raw.githubusercontent.com/cl4irv0yant/dotfiles/master/scripts/OS/arch-linux"
 
 HOSTNAME="arch"
 ROOT_PASSWORD="pass"
