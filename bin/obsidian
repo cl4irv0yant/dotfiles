@@ -1,2 +1,4 @@
-exec $HOME/.local/bin/Obsidian-1.5.3.AppImage
+#!/bin/bash
+
+exec "${OBSIDIAN_PATH}"
 

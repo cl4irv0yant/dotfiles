@@ -1,0 +1,39 @@
+version: "3.3"
+
+services:
+
+  traefik:
+    image: "traefik:${TRAEFIK_VERSION}"
+    container_name: "traefik"
+    command:
+      - "--api.insecure=${TRAEFIK_API_INSECURE}"
+      - "--providers.docker=${TRAEFIK_PROVIDERS_DOCKER}"
+      - "--providers.docker.exposedbydefault=${TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT}"
+      - "--entryPoints.web.address=${TRAEFIK_ENTRYPOINTS_WEB_ADDRESS}"
+    ports:
+      - "${TRAEFIK_PORT_80}:${TRAEFIK_PORT_80}"
+      - "${TRAEFIK_PORT_8080}:${TRAEFIK_PORT_8080}"
+    volumes:
+      - "${TRAEFIK_VOLUME_DOCKER_SOCK}:${TRAEFIK_VOLUME_DOCKER_SOCK}:ro"
+
+  whoami:
+    image: "${WHOAMI_IMAGE}"
+    container_name: "simple-service"
+    labels:
+      - "traefik.enable=${WHOAMI_TRAEFIK_ENABLE}"
+      - "traefik.http.routers.whoami.rule=Host(`${WHOAMI_HOST}`)"
+      - "traefik.http.routers.whoami.entrypoints=${WHOAMI_ENTRYPOINTS}"
+  couchdb:
+    image: couchdb:3.1
+    container_name: couchdb
+    ports:
+      - "5984:5984"
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=password
+    volumes:
+      - couchdb_data:/opt/couchdb/data
+
+volumes:
+  couchdb_data:
+

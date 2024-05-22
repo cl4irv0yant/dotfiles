@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  readarr-ebooks:
+    image: hotio/readarr
+    container_name: readarr-ebooks
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/ebooks/config:/config
+      - /path/to/ebooks/data:/data
+    ports:
+      - 8787:8787
+    restart: unless-stopped
+
+  readarr-audiobooks:
+    image: hotio/readarr
+    container_name: readarr-audiobooks
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/audiobooks/config:/config
+      - /path/to/audiobooks/data:/data
+    ports:
+      - 8788:8787
+    restart: unless-stopped
+
+  notifiarr:
+    image: notifiarr/notifiarr
+    container_name: notifiarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DISCORD_WEBHOOK_URL=<your_discord_webhook_url>
+      - SERVICES=readarr-ebooks,readarr-audiobooks
+    volumes:
+      - /path/to/notifiarr/config:/config
+    ports:
+      - 5454:5454
+    restart: unless-stopped
+
+  calibre:
+    image: linuxserver/calibre
+    container_name: calibre
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/calibre/config:/config
+      - /path/to/calibre/library:/library
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+
+  calibre-web:
+    image: linuxserver/calibre-web
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DOCKER_MODS=linuxserver/calibre-web:calibre
+    volumes:
+      - /path/to/calibre-web/config:/config
+      - /path/to/calibre/library:/books
+    ports:
+      - 8081:8083
+    restart: unless-stopped
+
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf
+    container_name: audiobookshelf
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/audiobookshelf/config:/config
+      - /path/to/audiobookshelf/audiobooks:/audiobooks
+    ports:
+      - 13378:13378
+    restart: unless-stopped

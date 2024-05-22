@@ -1,6 +1,6 @@
 #!/bin/bash
 
-search_dir="$SYNC/Calibre Library/"
+search_dir="$SYNC"
 pdf_viewer="zathura"
 epub_viewer="zathura"
 log_file="$HOME/pdf_epub_launcher.log"
@@ -29,4 +29,3 @@ if [ -n "$selected_file" ]; then
 else
     echo "No file selected."
 fi
-i

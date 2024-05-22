@@ -5,8 +5,9 @@ export POLYBAR_DIR="$DOTFILES/polybar"
 export I3_DIR="$DOTFILES/i3"
 export ROFI_DIR="$DOTFILES/rofi"
 
-export NOTES="$HOME/sync/notes"
+export NOTES="$HOME/sync/sync/Vault"
 export SYNC="$HOME/sync/sync"
+export OBSIDIAN_PATH="$HOME/.local/bin/Obsidian-1.5.12.AppImage"
 
 # XDG Base Directory Specification
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -17,6 +18,9 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # ZSH configuration
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$ZDOTDIR/.zhistory"
+
+# X11
+export XINITRC="$XDG_CONFIG_HOME/X11/.xinitc"
 
 # History configuration
 export HISTSIZE=10000
@@ -51,13 +55,13 @@ export PATH="$DOTFILES/bin/:$PATH"
 # Cleanup
 export GOPATH="$XDG_DATA_HOME"/go 
 export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
-
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc 
-
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup 
-
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 # fzf configuration
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export QT_SCALE_FACTOR=1.5
+

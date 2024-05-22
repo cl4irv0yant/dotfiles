@@ -4,7 +4,7 @@ iDIR="$HOME/.config/mako/icons"
 
 # Get Volume
 get_volume() {
-	volume=$(pamixer --get-volume)
+	volume=$(pulsemixer --get-volume | awk '{print $1}')
 	echo "$volume"
 }
 
@@ -29,34 +29,35 @@ notify_user() {
 
 # Increase Volume
 inc_volume() {
-	pamixer -i 5 && notify_user
+	pulsemixer --change-volume +5 && notify_user
 }
 
 # Decrease Volume
 dec_volume() {
-	pamixer -d 5 && notify_user
+	pulsemixer --change-volume -5 && notify_user
 }
 
 # Toggle Mute
 toggle_mute() {
-	if [ "$(pamixer --get-mute)" == "false" ]; then
-		pamixer -m && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/volume-mute.png" "Volume Switched OFF"
-	elif [ "$(pamixer --get-mute)" == "true" ]; then
-		pamixer -u && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Volume Switched ON"
+	if [ "$(pulsemixer --get-mute)" == "0" ]; then
+		pulsemixer --toggle-mute && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/volume-mute.png" "Volume Switched OFF"
+	elif [ "$(pulsemixer --get-mute)" == "1" ]; then
+		pulsemixer --toggle-mute && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Volume Switched ON"
 	fi
 }
 
 # Toggle Mic
 toggle_mic() {
-	if [ "$(pamixer --default-source --get-mute)" == "false" ]; then
-		pamixer --default-source -m && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/microphone-mute.png" "Microphone Switched OFF"
-	elif [ "$(pamixer --default-source --get-mute)" == "true" ]; then
-		pamixer -u --default-source u && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/microphone.png" "Microphone Switched ON"
+	if [ "$(pulsemixer --id source-$(pulsemixer --list-sources | awk '{print $2}' | head -n 1) --get-mute)" == "0" ]; then
+		pulsemixer --id source-$(pulsemixer --list-sources | awk '{print $2}' | head -n 1) --toggle-mute && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/microphone-mute.png" "Microphone Switched OFF"
+	elif [ "$(pulsemixer --id source-$(pulsemixer --list-sources | awk '{print $2}' | head -n 1) --get-mute)" == "1" ]; then
+		pulsemixer --id source-$(pulsemixer --list-sources | awk '{print $2}' | head -n 1) --toggle-mute && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/microphone.png" "Microphone Switched ON"
 	fi
 }
+
 # Get icons
 get_mic_icon() {
-	current=$(pamixer --default-source --get-volume)
+	current=$(pulsemixer --id source-$(pulsemixer --list-sources | awk '{print $2}' | head -n 1) --get-volume | awk '{print $1}')
 	if [[ "$current" -eq "0" ]]; then
 		echo "$iDIR/microphone.png"
 	elif [[ ("$current" -ge "0") && ("$current" -le "30") ]]; then
@@ -67,19 +68,20 @@ get_mic_icon() {
 		echo "$iDIR/microphone.png"
 	fi
 }
+
 # Notify
 notify_mic_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_mic_icon)" "Mic-Level : $(pamixer --default-source --get-volume) %"
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_mic_icon)" "Mic-Level : $(pulsemixer --id source-$(pulsemixer --list-sources | awk '{print $2}' | head -n 1) --get-volume | awk '{print $1}') %"
 }
 
 # Increase MIC Volume
 inc_mic_volume() {
-	pamixer --default-source -i 5 && notify_mic_user
+	pulsemixer --id source-$(pulsemixer --list-sources | awk '{print $2}' | head -n 1) --change-volume +5 && notify_mic_user
 }
 
 # Decrease MIC Volume
 dec_mic_volume() {
-	pamixer --default-source -d 5 && notify_mic_user
+	pulsemixer --id source-$(pulsemixer --list-sources | awk '{print $2}' | head -n 1) --change-volume -5 && notify_mic_user
 }
 
 # Execute accordingly

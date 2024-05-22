@@ -28,24 +28,36 @@ link_config "$DOTFILES/config/lf" "$XDG_CONFIG_HOME/lf"
 link_config "$DOTFILES/config/npm" "$XDG_CONFIG_HOME/npm"
 link_config "$DOTFILES/config/mycli/myclirc" "$XDG_CONFIG_HOME/myclirc"
 link_config "$DOTFILES/config/xdg-user-dirs/user-dirs.dirs" "$XDG_CONFIG_HOME/user-dirs.dirs"
-link_config "$DOTFILES/config/transmission" "$XDG_CONFIG_HOME/transmission-daemon"
+
+rm -rf "$XDG_CONFIG_HOME/transmission-daemon"
+mkdir "$XDG_CONFIG_HOME/transmission-daemon"
+link_config "$DOTFILES/config/transmission/settings.json" "$XDG_CONFIG_HOME/transmission-daemon/settings.json"
 link_config "$DOTFILES/config/newsboat" "$XDG_CONFIG_HOME/newsboat"
 link_config "$DOTFILES/config/tmux" "$XDG_CONFIG_HOME/tmux"
+link_config "$DOTFILES/config/pulsemixer" "$XDG_CONFIG_HOME/pulsemixer"
 
 # Tmux plugin manager (TPM)
 [ ! -d "$XDG_CONFIG_HOME/tmux/plugins" ] &&
 	git clone https://github.com/tmux-plugins/tpm "$XDG_CONFIG_HOME/tmux/plugins/tpm"
 
 # GUI configurations
+link_config "$DOTFILES/config/gui/dunst" "$XDG_CONFIG_HOME/dunst"
 link_config "$DOTFILES/config/gui/alacritty" "$XDG_CONFIG_HOME/alacritty"
 link_config "$DOTFILES/config/gui/zathura" "$XDG_CONFIG_HOME/zathura"
 link_config "$DOTFILES/config/gui/gtk-3.0" "$XDG_CONFIG_HOME/gtk-3.0"
 link_config "$DOTFILES/config/gui/gtk-2.0" "$XDG_CONFIG_HOME/gtk-2.0"
 link_config "$DOTFILES/config/gui/jetbrains/ideavim" "$XDG_CONFIG_HOME/ideavim"
+
+# Wayland
 link_config "$DOTFILES/config/gui/Wayland/hypr" "$XDG_CONFIG_HOME/hypr"
 link_config "$DOTFILES/config/gui/Wayland/waybar" "$XDG_CONFIG_HOME/waybar"
 link_config "$DOTFILES/config/gui/Wayland/wofi" "$XDG_CONFIG_HOME/wofi"
-link_config "$DOTFILES/config/gui/dunst" "$XDG_CONFIG_HOME/dunst"
+
+# Xorg
+link_config "$DOTFILES/config/gui/Xorg/i3" "$XDG_CONFIG_HOME/i3"
+link_config "$DOTFILES/config/gui/Xorg/rofi" "$XDG_CONFIG_HOME/rofi"
+link_config "$DOTFILES/config/gui/Xorg/polybar" "$XDG_CONFIG_HOME/polybar"
+link_config "$DOTFILES/config/gui/Xorg/X11" "$XDG_CONFIG_HOME/X11"
 
 # Desktop applications
 mkdir -p "$XDG_DATA_HOME/applications"

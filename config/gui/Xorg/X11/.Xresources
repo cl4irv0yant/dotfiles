@@ -65,3 +65,6 @@ URxvt*inheritPixmap: true
 URxvt*transparent: true
 URxvt*shading: 10
 *perl-ext-common: default
+
+Xft.dpi: 192
+

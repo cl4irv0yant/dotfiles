@@ -1,3 +1,14 @@
+# autoload
+fpath=($ZDOTDIR/external $fpath)
+autoload -Uz compinit; compinit
+autoload -Uz edit-command-line
+autoload -Uz select-bracketed select-quoted
+autoload -Uz surround
+
+# external
+autoload -Uz cursor_mode && cursor_mode
+autoload -Uz custom_prompt && custom_prompt
+
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_SILENT
@@ -12,17 +23,6 @@ setopt SHARE_HISTORY
 
 # load modules
 zmodload zsh/complist # For menuselect
-
-# autoload
-fpath=($ZDOTDIR/external $fpath)
-autoload -Uz compinit; compinit
-autoload -Uz edit-command-line
-autoload -Uz select-bracketed select-quoted
-autoload -Uz surround
-
-# external
-autoload -Uz cursor_mode && cursor_mode
-autoload -Uz custom_prompt && custom_prompt
 
 
 if command -v pyenv > /dev/null; then
@@ -59,9 +59,7 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
-
 bindkey -M vicmd v edit-command-line
-
 bindkey -M vicmd cs change-surround
 bindkey -M vicmd ds delete-surround
 bindkey -M vicmd ys add-surround
@@ -81,12 +79,14 @@ for km in viopp visual; do
   done
 done
 
-if [ "$(tty)" = "/dev/tty1" ] && [ "$(tty)" = "/dev/tty1" ]; then
-	exec Hyprland
+if [ "$(tty)" = "/dev/tty1" ]; then
+    choice=$(echo -e "Hyprland\nXorg" | fzf)
+    case $choice in
+        Hyprland) exec Hyprland ;;
+        Xorg) startx ;;
+    esac
 fi
 
-ftmuxp
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [ "$(tty)" != "/dev/tty1" ]; then
+  ftmuxp
+fi
