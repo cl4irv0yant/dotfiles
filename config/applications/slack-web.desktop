@@ -1,4 +1,4 @@
 [Desktop Entry]
-Name=Slack
+Name=Slack Web
 Exec=firefox https://app.slack.com/client
 Type=Application

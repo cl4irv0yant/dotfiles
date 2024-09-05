@@ -93,13 +93,10 @@ g() {
 r() {
   current_branch=$(git symbolic-ref --short HEAD)
 
-  if [[ $current_branch == *"bug/"* ]] || [[ $current_branch == *"feature/"* ]] || [[ $current_branch == *"chore/"* ]]; then
-    target_branch="develop"
-  elif [[ $current_branch == *"hotfix/"* ]]; then
+  if [[ $current_branch == *"hotfix/"* ]] || [[ $current_branch == *"feature/"* ]] || [[ $current_branch == *"chore/"* ]]; then
     target_branch="master"
-
   else
-    echo "Error: Unsupported branch type. Branch name must include 'feature/', 'bug/', 'chore/', or 'hotfix/'"
+    echo "Error: Unsupported branch type. Branch name must include 'feature/', 'chore/', or 'hotfix/'"
   fi
 
   echo "Rebasing $current_branch to $target_branch..."

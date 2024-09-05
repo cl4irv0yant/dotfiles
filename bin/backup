@@ -16,7 +16,6 @@ log_and_set_permissions() {
     sudo find "$path" -type d -exec sh -c 'echo "$(stat -c "%a %n" "{}")" >> "$0"; chmod "$1" "{}"' "$PERMISSION_LOG" "$perm_dirs" \;
 }
 
-
 # Bluetooth Devices
 sudo cp -r /var/lib/bluetooth "$BACKUP_DIR/bluetooth"
 log_and_set_permissions "$BACKUP_DIR/bluetooth" "600" "700"
@@ -26,32 +25,31 @@ sudo cp -r /etc/NetworkManager/system-connections "$BACKUP_DIR/network-connectio
 log_and_set_permissions "$BACKUP_DIR/network-connections" "600" "700"
 
 # SSH Keys
-cp -r $HOME/.ssh "$BACKUP_DIR/ssh-keys"
+cp -r "$HOME/.ssh" "$BACKUP_DIR/ssh-keys"
 log_and_set_permissions "$BACKUP_DIR/ssh-keys" "600" "700"
 
 # Firefox Data
-cp -r $HOME/.mozilla/firefox "$BACKUP_DIR/firefox-data"
+cp -r "$HOME/.mozilla/firefox" "$BACKUP_DIR/firefox-data"
 
 # JetBrains Data
-cp -r $XDG_DATA_HOME/JetBrains "$BACKUP_DIR/jetbrains-data"
+cp -r "$XDG_DATA_HOME/JetBrains" "$BACKUP_DIR/jetbrains-data"
 
 # Thunderbird Data
-cp -r $HOME/.thunderbird "$BACKUP_DIR/thunderbird-data"
+cp -r "$HOME/.thunderbird" "$BACKUP_DIR/thunderbird-data"
 
 # fstab
 cp /etc/fstab "$BACKUP_DIR/fstab"
 chmod 644 "$BACKUP_DIR/fstab"
 
 # tmuxp sessions
-cp -r $XDG_CONFIG_HOME/tmuxp "$BACKUP_DIR/tmuxp-sessions"
+cp -r "$XDG_CONFIG_HOME/tmuxp" "$BACKUP_DIR/tmuxp-sessions"
 # Permissions for tmuxp sessions can be default
 
 # zsh history
-cp $ZDOTDIR/.zhistory "$BACKUP_DIR/zhistory"
+cp "$ZDOTDIR/.zhistory" "$BACKUP_DIR/zhistory"
 chmod 600 "$BACKUP_DIR/zhistory"
 
-# GnuPG
-cp -r $HOME/.gnupg "$BACKUP_DIR/gnupg"
+cp -r "$HOME/.gnupg" "$BACKUP_DIR/gnupg"
 log_and_set_permissions "$BACKUP_DIR/gnupg" "600" "700"
 
 # Cron jobs
@@ -60,11 +58,10 @@ log_and_set_permissions "$BACKUP_DIR/gnupg" "600" "700"
 # chmod 600 "$BACKUP_DIR/crontab"
 
 # Package list (for Arch Linux)
-pacman -Qqe > "$BACKUP_DIR/pkglist.txt"
+pacman -Qqe >"$BACKUP_DIR/pkglist.txt"
 chmod 644 "$BACKUP_DIR/pkglist.txt"
 
 # tar -czvf "$BACKUP_DIR.tar.gz" -C "$BACKUP_DIR" .
 
 echo "Backup completed. Data saved in $BACKUP_DIR"
 echo "Original permissions logged in $PERMISSION_LOG"
-
