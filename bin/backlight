@@ -1,28 +1,34 @@
+#!/usr/bin/env bash
+
+# Get Backlight Brightness
 get_backlight() {
-	LIGHT=$(printf "%.0f\n" $(brightnessctl g))
-	echo "${LIGHT}"
+    LIGHT=$(brightnessctl g) # Get the current brightness level
+    echo "${LIGHT}"
 }
 
-
+# Notify the user about the brightness level
 notify_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "Brightness : $(get_backlight)"
+    local brightness=$(get_backlight)
+    notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Brightness Level" "Current brightness: ${brightness}%" -i "notification-display-brightness" # Change or remove the icon as needed
 }
 
+# Increase backlight brightness by 5%
 inc_backlight() {
-	brightnessctl s +5% && get_icon && notify_user
+    brightnessctl s +5% && notify_user
 }
 
+# Decrease backlight brightness by 5%
 dec_backlight() {
-	brightnessctl s 5%- && get_icon && notify_user
+    brightnessctl s 5%- && notify_user
 }
 
+# Main script logic based on arguments
 if [[ "$1" == "--get" ]]; then
-	get_backlight
+    get_backlight
 elif [[ "$1" == "--inc" ]]; then
-	inc_backlight
+    inc_backlight
 elif [[ "$1" == "--dec" ]]; then
-	dec_backlight
+    dec_backlight
 else
-	get_backlight
+    get_backlight
 fi
-

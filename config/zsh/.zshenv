@@ -1,4 +1,5 @@
 # Personal directories
+#
 export DOTFILES="$HOME/sync/sync/src/dotfiles"
 
 export POLYBAR_DIR="$DOTFILES/polybar"
@@ -66,4 +67,6 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export QT_SCALE_FACTOR=1.5
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
+export AWS_PROFILE=$(pass show aws/profile)

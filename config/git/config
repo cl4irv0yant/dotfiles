@@ -1,8 +1,6 @@
 [user]
-	email = 
-	name = 
-	email = =
-	name = =
+	email =
+	name =
 [alias]
   	glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
 [core]
@@ -25,3 +23,9 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[init]
+	deafultBranch = main
+[gpg]
+	format = ssh
+[push]
+	autoSetupRemote = true

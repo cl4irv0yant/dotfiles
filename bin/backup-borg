@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Set variables
+SRC_DIR="$SYNC"                                  # Source directory to back up (customize if necessary)
+REPO_DIR="/run/media/gustaf/7E36-49D3/borg-repo" # Borg repository on external drive
+DATE=$(date +"%Y-%m-%d")
+
+# Ensure the external drive is mounted
+if ! mountpoint -q /run/media/gustaf/7E36-49D3; then
+    echo "External drive is not mounted. Mounting now..."
+    sudo mount /dev/sda1 /mnt/backup
+    if [ $? -ne 0 ]; then
+        echo "Failed to mount the external drive. Exiting."
+        exit 1
+    fi
+fi
+
+# Initialize the Borg repository if it's the first time
+if [ ! -d "$REPO_DIR" ]; then
+    echo "Initializing Borg repository at $REPO_DIR..."
+    borg init --encryption=repokey "$REPO_DIR"
+fi
+
+# Create the backup
+borg create --stats --progress "$REPO_DIR"::"backup-$DATE" "$SRC_DIR"
+
+echo "Backup completed successfully to Borg repository."
+
+# Optional: Unmount the external drive
+# sudo umount /mnt/backup
